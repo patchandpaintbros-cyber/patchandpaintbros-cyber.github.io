@@ -109,3 +109,21 @@ Per your ask to use better pictures/video and add more to the gallery:
   - Swapped the homepage's big "SEE US IN ACTION / Real job-site footage. Not stock." video from the Studio Paint Finish clip to the full Tia Tita Main House walkthrough — hadn't been used anywhere on the site yet, bigger and more comprehensive showcase.
   - Added a click-to-play-video feature: any photo with a matching real job video (marked with a play icon) now opens a lightbox and plays it — Tia Tita main house/garage/doghouse, the basement before/after pair, and one downtown hallway shot, on both the homepage grid and the gallery page. Click outside, the X, or Escape closes it.
   - Rebuilt the **Residential** and **Repairs** pathway card photos as real half-before/half-after splits instead of single photos — Residential uses the Dark Cabinet Room wall (same exact spot, primed → painted dark), Repairs uses the existing matched bathroom repair pair.
+
+## Update (10/18/26), Chris's review pass
+- Removed the phone number from the top header next to "Free Estimate" (it's still in the hero button, contact section, footer, and mobile call bar).
+- Swapped the "Real job-site footage" video from the Tia Tita exterior walkthrough to the new Full House Remodel finger-snap before/after (pro-edited, 23s, compressed to 3MB, 720x1280), with new caption text and poster.
+- "Built around quality" photo: replaced the crew-at-work shot with an edited, finished main-floor drywall photo (Full House Remodel).
+- Gallery footer logo: removed the screen-blend and brightness filter that washed it out. Kept it transparent (no white card, per Chris), full logo with height:auto and object-fit:contain so it isn't cut off. Gallery phone number untouched.
+- Homepage footer logo: also made transparent to match the gallery (no white card).
+
+## Update (10/18/26), "Professional Upgrade" zip (applied partially)
+Chris dropped in `Patch-and-Paint-Bros-PROFESSIONAL-UPGRADE.zip` (built outside this project on top of the current files). Applied:
+- Hero description rewritten: drywall finishing, repairs, texture matching, interior/exterior painting, Omaha + surrounding metro.
+- Estimate form: autofill hints (name/phone/email/ZIP), numeric keypad for ZIP, 16px inputs (stops iPhone zoom-in), bigger full-width submit button on phones, "No obligation to hire" helper line, styled success/error message box.
+- "How it works" intro line reworded; gold top border on the 5 process steps.
+- Mobile hero sizing/button wrap tweaks; reduced-motion support on both pages.
+Skipped:
+- The drag before/after slider on the cabinet proof photos. The two photos are framed completely differently (the before has black letterbox bars and a wider crop), so overlaying them would look broken. The zip's own README said to keep side-by-side in that case. Kept the existing side-by-side.
+Note: the zip's README claimed gallery lazy-loading was added. It wasn't. The only gallery change was reduced-motion CSS.
+privacy.html/terms.html in the zip were identical to the current ones.

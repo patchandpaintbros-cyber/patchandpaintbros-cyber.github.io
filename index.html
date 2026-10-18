@@ -101,7 +101,7 @@ body{background:#fff;color:#17232d}
 }
 .site-footer a{color:#fff!important}
 .site-footer strong{color:var(--gold-light)!important}
-.footer-logo{background:#fff!important;max-width:230px;height:auto;padding:9px 16px;border-radius:8px}
+.footer-logo{background:transparent!important;display:block;width:100%;max-width:230px;height:auto;object-fit:contain;padding:0}
 .footer-extra{border-top-color:rgba(255,255,255,.12)}
 .estimate-form input,.estimate-form select,.estimate-form textarea{
   border:1px solid #bfc7cb;
@@ -372,6 +372,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   "description":"Drywall finishing, drywall repair, texture work, surface preparation, and interior and exterior painting in the Omaha metro."
 }
 </script>
+<style id="ppb-professional-upgrade">
+/* Non-destructive professional polish: existing brand and imagery retained */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ppb-submit{min-height:56px;font-size:14px;cursor:pointer;border-radius:4px}
+.ppb-submit:disabled{opacity:.7;cursor:wait}
+.ppb-form-help{font-size:12px;color:#475663;line-height:1.6;margin:0}
+#estimate-form-status:not(:empty){grid-column:1/-1;padding:16px;border-left:4px solid #c6a563;background:#f5f0e7;line-height:1.6}
+.estimate-form input,.estimate-form select,.estimate-form textarea{min-height:44px;border-radius:3px;font-size:16px}
+.estimate-form label{font-size:13px}
+.promise-grid.five>div{border-top:3px solid #c6a563}
+@media(max-width:600px){.hero-content h1{font-size:clamp(44px,12vw,68px)}.hero-buttons{flex-wrap:wrap}.hero-buttons .btn{min-height:48px}.ppb-submit{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.path-card{transition:none!important}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#top">Skip to main content</a>
@@ -380,7 +393,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <a class="brand" href="#top" aria-label="Patch and Paint Bros home"><img src="assets/patch-paint-bros-header-logo.png" alt="Patch and Paint Bros"></a>
   <button class="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
   <nav><a href="#top">Home</a><a href="#residential">Residential</a><a href="#repairs">Repairs</a><a href="#services">Services</a><a href="gallery.html">Gallery</a><a href="#contact">Contact</a></nav>
-  <div class="header-actions"><a class="phone" href="tel:+14022147952">402-214-7952</a><a class="btn small" href="#contact">Free Estimate</a></div>
+  <div class="header-actions"><a class="btn small" href="#contact">Free Estimate</a></div>
 </header>
 
 <div class="nav-scrim" id="navScrim"></div>
@@ -392,7 +405,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="hero-content">
     <p class="eyebrow">DRYWALL FINISHING · INTERIOR & EXTERIOR PAINTING</p>
     <h1>We repair.<br>We paint.<br><em>We perfect.</em></h1>
-    <p>Professional drywall finishing and interior & exterior painting throughout the Omaha metro. Detailed preparation. Clean execution. Consistent, professional results.</p>
+    <p>Drywall finishing, repairs, texture matching, and interior &amp; exterior painting for homes throughout Omaha and the surrounding metro. Careful preparation, clean work areas, and professional results.</p>
     <div class="hero-buttons"><a class="btn" href="#contact">Request a Free Estimate →</a><a class="btn outline light" href="tel:+14022147952">Call 402-214-7952</a></div><p class="hero-note">Serving Omaha · Bellevue · Papillion · Surrounding Areas</p>
   </div>
 </section>
@@ -440,7 +453,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 <section class="promise" id="process">
 <p class="eyebrow">A SIMPLE, PROFESSIONAL PROCESS</p><h2>From estimate to final walkthrough.</h2>
-<p class="promise-intro">You should always know what is happening in your home and what comes next.</p>
+<p class="promise-intro">A clear process from your first message through the final walkthrough.</p>
 <div class="promise-grid five">
 <div><b>01</b><strong>Tell Us About It</strong><span>Call, text, or send photos of your project.</span></div>
 <div><b>02</b><strong>Free Estimate</strong><span>We review the scope and give you a straightforward estimate.</span></div>
@@ -450,8 +463,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </div></section>
 
 <section class="video-section">
-  <div class="section-head"><div><p class="eyebrow gold">SEE US IN ACTION</p><h2>Real job-site footage.<br><em>Not stock.</em></h2></div><p>A full exterior repaint, filmed start to finish &mdash; every structure on the property, same standard throughout.</p></div>
-  <div class="video-frame-wrap"><video class="video-frame" src="assets/video/tia-tita-main-house-full.mp4" poster="assets/photos/tia-tita-main-house.jpg" muted loop playsinline controls preload="metadata"></video></div>
+  <div class="section-head"><div><p class="eyebrow gold">SEE US IN ACTION</p><h2>Real job-site footage.<br><em>Not stock.</em></h2></div><p>A full-house drywall finish, room by room. Watch each space go from damaged to done in a snap.</p></div>
+  <div class="video-frame-wrap"><video class="video-frame" src="assets/video/full-house-remodel-snap.mp4" poster="assets/photos/full-house-remodel-snap-poster.jpg" muted loop playsinline controls preload="metadata"></video></div>
 </section>
 
 <section class="gallery" id="gallery">
@@ -475,7 +488,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <p>Patch & Paint Bros provides professional drywall finishing, drywall repair, surface preparation, and interior and exterior painting throughout the Omaha metro. Our focus is straightforward: prepare the surface correctly, complete the work with attention to detail, communicate clearly, and deliver a clean, professional finish.</p>
     <div class="values"><p><b>01 · Quality First</b><br>Careful preparation and attention to the details that affect the final result.</p><p><b>02 · Clear Communication</b><br>Straightforward expectations about the scope, schedule, and work being completed.</p><p><b>03 · Professional Standards</b><br>Protected work areas, clean execution, and a finished result built to look right.</p></div>
   </div>
-  <div class="photo-frame"><img src="assets/photos/about-crew-at-work.jpg" alt="Patch and Paint Bros crew finishing a drywall seam on site" loading="lazy"></div>
+  <div class="photo-frame"><img src="assets/photos/about-finished-main-floor.jpg" alt="Finished drywall across an open main floor, Omaha metro" loading="lazy"></div>
 </section>
 
 <section class="areas" id="areas">
@@ -500,7 +513,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div><p class="eyebrow">FREE ESTIMATE</p><h2>Ready for a better<br><em>finished result?</em></h2><p>Have drywall or painting work in mind? Tell us what you need, or text us photos of the project. We'll review the details and help you take the next step with a free, no-obligation estimate.</p>
     <div class="contact-links"><a href="tel:+14022147952">Call · 402-214-7952</a><a href="sms:+14022147952">Text Us Photos</a><a href="mailto:patchandpaintbros@gmail.com">Email Photos</a></div>
   </div>
-  <form class="estimate-form" id="estimate-form" action="https://formspree.io/f/moejqzkp" method="POST"><div class="form-heading wide"><p class="eyebrow gold">READY TO START?</p><h3>How can we help?</h3><p>Select all that apply and tell us a little about your project.</p></div><label>First Name *<input name="first_name" required></label><label>Last Name<input name="last_name"></label><label>Phone *<input name="phone" type="tel" required></label><label>Email<input name="email" type="email"></label><label>ZIP Code<input name="zip"></label><label>Preferred Contact<select name="contact"><option>Text</option><option>Phone Call</option><option>Email</option></select></label><fieldset class="service-selector wide"><legend>How can we help? Select all that apply</legend><label><input type="checkbox" name="services" value="Residential Drywall">Residential Drywall</label><label><input type="checkbox" name="services" value="Commercial Drywall">Commercial Drywall</label><label><input type="checkbox" name="services" value="Drywall Finishing">Drywall Finishing</label><label><input type="checkbox" name="services" value="Drywall Repair">Drywall Repair</label><label><input type="checkbox" name="services" value="Texture Matching">Texture Matching</label><label><input type="checkbox" name="services" value="Ceiling Repair">Ceiling Repair</label><label><input type="checkbox" name="services" value="Interior Painting">Interior Painting</label><label><input type="checkbox" name="services" value="Exterior Painting">Exterior Painting</label><label><input type="checkbox" name="services" value="Cabinet Painting">Cabinet Painting</label><label><input type="checkbox" name="services" value="Deck / Fence Staining">Deck / Fence Staining</label><label><input type="checkbox" name="services" value="Surface Preparation">Surface Preparation</label><label><input type="checkbox" name="services" value="Other">Other</label></fieldset><label class="wide">Tell us about your project *<textarea name="project" rows="5" required></textarea></label><p class="wide photo-note"><strong>Have photos?</strong> Text them to <a href="sms:+14022147952">402-214-7952</a>.</p><p class="wide form-consent">By submitting this form, you're asking Patch &amp; Paint Bros for a free estimate. We'll use the details above only to respond to and manage your estimate request &mdash; see our <a href="privacy.html">Privacy Policy</a> for how your information is handled. We won't sign you up for marketing just for requesting an estimate.</p><button class="btn wide" type="submit">Request My Free Estimate →</button></form>
+  <form class="estimate-form" id="estimate-form" action="https://formspree.io/f/moejqzkp" method="POST"><div class="form-heading wide"><p class="eyebrow gold">READY TO START?</p><h3>How can we help?</h3><p>Select all that apply and tell us a little about your project.</p></div><label>First Name *<input name="first_name" autocomplete="given-name" required></label><label>Last Name<input name="last_name" autocomplete="family-name"></label><label>Phone *<input name="phone" type="tel" autocomplete="tel" required></label><label>Email<input name="email" type="email" autocomplete="email"></label><label>ZIP Code<input name="zip" inputmode="numeric" autocomplete="postal-code"></label><label>Preferred Contact<select name="contact"><option>Text</option><option>Phone Call</option><option>Email</option></select></label><fieldset class="service-selector wide"><legend>How can we help? Select all that apply</legend><label><input type="checkbox" name="services" value="Residential Drywall">Residential Drywall</label><label><input type="checkbox" name="services" value="Commercial Drywall">Commercial Drywall</label><label><input type="checkbox" name="services" value="Drywall Finishing">Drywall Finishing</label><label><input type="checkbox" name="services" value="Drywall Repair">Drywall Repair</label><label><input type="checkbox" name="services" value="Texture Matching">Texture Matching</label><label><input type="checkbox" name="services" value="Ceiling Repair">Ceiling Repair</label><label><input type="checkbox" name="services" value="Interior Painting">Interior Painting</label><label><input type="checkbox" name="services" value="Exterior Painting">Exterior Painting</label><label><input type="checkbox" name="services" value="Cabinet Painting">Cabinet Painting</label><label><input type="checkbox" name="services" value="Deck / Fence Staining">Deck / Fence Staining</label><label><input type="checkbox" name="services" value="Surface Preparation">Surface Preparation</label><label><input type="checkbox" name="services" value="Other">Other</label></fieldset><label class="wide">Tell us about your project *<textarea name="project" rows="5" required></textarea></label><p class="wide photo-note"><strong>Have photos?</strong> Text them to <a href="sms:+14022147952">402-214-7952</a>.</p><p class="wide form-consent">By submitting this form, you're asking Patch &amp; Paint Bros for a free estimate. We'll use the details above only to respond to and manage your estimate request &mdash; see our <a href="privacy.html">Privacy Policy</a> for how your information is handled. We won't sign you up for marketing just for requesting an estimate.</p><button class="btn wide ppb-submit" type="submit">Request My Free Estimate →</button><p class="wide ppb-form-help">No obligation to hire. We’ll contact you about your project using the details you provide.</p></form>
 </section>
 </main>
 
