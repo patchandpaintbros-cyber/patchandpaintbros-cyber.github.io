@@ -136,3 +136,7 @@ privacy.html/terms.html in the zip were identical to the current ones.
 - Every link and file (57 unique URLs) checked live: all load. The only failure is patchandpaintbros.com/..., which is expected until the domain is connected.
 - Speed: phones on 4G took about 5.3s to show the hero photo. Changes: the header and footer logo now use a lossless WebP copy (`patch-paint-bros-header-logo.webp`, pixel-identical to the PNG, 172KB instead of 274KB; the original PNG is still in assets/). The hero photo now loads first (fetchpriority). The cabinet before/after photos and the footer logo now load lazily.
 - Fixed the TikTok link typo (@paintandpatchbros → @patchandpaintbros). Chris confirmed every account is patchandpaintbros.
+
+## Update (10/18/26) — Domain connected
+- Chris changed the GoDaddy DNS for patchandpaintbros.com: 4 A records for @ pointing at GitHub Pages (185.199.108-111.153), replacing the "WebsiteBuilder Site" coming-soon page, and the www CNAME pointing at patchandpaintbros-cyber.github.io. The other records (pay, _domainconnect, _dmarc, NS, SOA) were left alone.
+- GitHub Pages custom domain set to patchandpaintbros.com. A `CNAME` file was added to this folder so publishes keep it.
