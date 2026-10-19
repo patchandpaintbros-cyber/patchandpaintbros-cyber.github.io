@@ -127,3 +127,10 @@ Skipped:
 - The drag before/after slider on the cabinet proof photos. The two photos are framed completely differently (the before has black letterbox bars and a wider crop), so overlaying them would look broken. The zip's own README said to keep side-by-side in that case. Kept the existing side-by-side.
 Note: the zip's README claimed gallery lazy-loading was added. It wasn't. The only gallery change was reduced-motion CSS.
 privacy.html/terms.html in the zip were identical to the current ones.
+
+## Update (10/18/26), website checklist pass
+- Tested every page on iPhone 15, iPhone SE, Pixel 7, iPad, laptop, desktop Safari and a 1920px monitor: no broken images, no JS errors, no sideways scrolling (after the fix below).
+- Fixed: on small phones (iPhone SE size) the gallery header's MENU button stuck out 5px, so the page wiggled sideways. Logo shrinks a little under 380px wide now.
+- Fixed: the phone Call / Text / Estimate bottom bar existed in the HTML but had never been styled, so it was always hidden (the page even reserved space for it). It's now a navy bar with a gold Estimate button on phones. The gold "FREE ESTIMATE" side tab is hidden on phones because it was covering form text and the submit button; it still shows on tablets and computers.
+- Estimate form: sent a live test (labeled TEST) and it arrived in patchandpaintbros@gmail.com. Gmail put it under the Updates tab. Added a hidden `_subject` so form emails now say "New Free Estimate Request - PPB Website" instead of "New submission from A New Form".
+- Every link and file (57 unique URLs) checked live: all load. The only failure is patchandpaintbros.com/..., which is expected until the domain is connected.
