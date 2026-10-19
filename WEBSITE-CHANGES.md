@@ -140,3 +140,10 @@ privacy.html/terms.html in the zip were identical to the current ones.
 ## Update (10/18/26) — Domain connected
 - Chris changed the GoDaddy DNS for patchandpaintbros.com: 4 A records for @ pointing at GitHub Pages (185.199.108-111.153), replacing the "WebsiteBuilder Site" coming-soon page, and the www CNAME pointing at patchandpaintbros-cyber.github.io. The other records (pay, _domainconnect, _dmarc, NS, SOA) were left alone.
 - GitHub Pages custom domain set to patchandpaintbros.com. A `CNAME` file was added to this folder so publishes keep it.
+
+## Update (10/18/26) — Phone speed pass
+- Hero photo now served as WebP in two sizes (720w 20KB / 1152w 37KB, was a 112KB JPG). The browser picks the right one per screen.
+- Residential/Repairs pathway card photos are WebP at 720w (29KB + 15KB, were 158KB + 142KB JPGs).
+- Header logo has a 320w WebP option (18KB) for small or low-density screens. Sharp phone screens still get the full-size logo.
+- Text-jump fix: added size-matched fallback fonts ("Playfair Fallback" from Georgia, "Montserrat Fallback" from Arial), so the headline doesn't shift when the Google fonts finish loading.
+- Original JPGs and the PNG logo are still in assets/ and untouched.

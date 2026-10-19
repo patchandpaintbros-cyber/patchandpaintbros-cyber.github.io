@@ -17,11 +17,12 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style id="font-fallbacks">@font-face{font-family:"Playfair Fallback";src:local("Georgia");size-adjust:98.3%;ascent-override:110%;descent-override:25.5%;line-gap-override:0%}@font-face{font-family:"Montserrat Fallback";src:local("Arial");size-adjust:107.5%;ascent-override:90%;descent-override:23.3%;line-gap-override:0%}</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root{--navy:#1E2D3D;--deep:#111A22;--gold:#B89B5E;--gold-light:#DCC48E;--cream:#F7F1E6}
     *{box-sizing:border-box}
-    body{margin:0;font-family:Montserrat,Arial,sans-serif;color:#2a333b;background:#fff}
+    body{margin:0;font-family:Montserrat,"Montserrat Fallback",Arial,sans-serif;color:#2a333b;background:#fff}
     a{color:var(--navy)}
     .wrap{width:min(860px,calc(100% - 40px));margin:auto}
     .skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--gold);color:#101820;padding:12px 20px;font-weight:800;font-size:13px;text-decoration:none}
@@ -42,9 +43,9 @@
 
     main{padding:64px 0 80px}
     .eyebrow{font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--gold);text-transform:uppercase}
-    h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(32px,5vw,46px);color:var(--deep);margin:10px 0 6px}
+    h1{font-family:"Playfair Display","Playfair Fallback",Georgia,serif;font-size:clamp(32px,5vw,46px);color:var(--deep);margin:10px 0 6px}
     .updated{color:#6b7680;font-size:13px;margin-bottom:40px}
-    h2{font-family:"Playfair Display",Georgia,serif;font-size:21px;color:var(--navy);margin:38px 0 12px}
+    h2{font-family:"Playfair Display","Playfair Fallback",Georgia,serif;font-size:21px;color:var(--navy);margin:38px 0 12px}
     p,li{line-height:1.75;font-size:15px;color:#3b444c}
     ul{padding-left:22px}
     li{margin-bottom:6px}
@@ -64,7 +65,7 @@
 <a class="skip-link" href="#main">Skip to main content</a>
 <div class="utility-bar"><div class="inner"><div><a href="mailto:patchandpaintbros@gmail.com">patchandpaintbros@gmail.com</a></div></div></div>
 <header class="site-header">
-  <a class="brand" href="index.html" aria-label="Patch and Paint Bros home"><img src="assets/patch-paint-bros-header-logo.webp" alt="Patch and Paint Bros"></a>
+  <a class="brand" href="index.html" aria-label="Patch and Paint Bros home"><img src="assets/patch-paint-bros-header-logo.webp" srcset="assets/patch-paint-bros-header-logo-320.webp 320w, assets/patch-paint-bros-header-logo.webp 578w" sizes="(max-width:600px) 160px, 260px" alt="Patch and Paint Bros"></a>
   <nav>
     <a href="index.html#services">Services</a>
     <a href="gallery.html">Gallery</a>
