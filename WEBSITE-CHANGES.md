@@ -147,3 +147,8 @@ privacy.html/terms.html in the zip were identical to the current ones.
 - Header logo has a 320w WebP option (18KB) for small or low-density screens. Sharp phone screens still get the full-size logo.
 - Text-jump fix: added size-matched fallback fonts ("Playfair Fallback" from Georgia, "Montserrat Fallback" from Arial), so the headline doesn't shift when the Google fonts finish loading.
 - Original JPGs and the PNG logo are still in assets/ and untouched.
+
+## Update (10/18/26) — Phone header layout + menu bug
+- Menu bug: on phones, tapping ☰ turned the screen grey and nothing could be tapped. The dark backdrop (`.nav-scrim`, z-index 55, outside the header) was stacking above the menu panel (inside the header's z-index 50 context). Moved the backdrop to z-index 49 so it sits behind the header and menu. Menu links work now. Tapping outside the menu still closes it.
+- Per Chris: on phones and tablets the header is now ☰ + Free Estimate on the LEFT and the logo on the RIGHT. The menu slides in from the left. The ☰ turns into ✕ while it's open. Gallery's "MENU" text button became ☰ to match, and the gallery got a Free Estimate header button too (phones/tablets only). Computer layout is unchanged (logo left, links right).
+- Removed an old 220px minimum width on the logo box for phones; it made the page scroll sideways once the logo moved right.

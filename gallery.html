@@ -314,6 +314,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </script>
 <style>@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}</style>
 <style id="font-fallbacks">@font-face{font-family:"Playfair Fallback";src:local("Georgia");size-adjust:98.3%;ascent-override:110%;descent-override:25.5%;line-gap-override:0%}@font-face{font-family:"Montserrat Fallback";src:local("Arial");size-adjust:107.5%;ascent-override:90%;descent-override:23.3%;line-gap-override:0%}</style>
+<style id="mobile-header">
+.mobile-est{display:none}
+@media(max-width:900px){
+  .menu-toggle{order:1;margin-left:0!important;position:relative;z-index:61;font-size:18px;letter-spacing:0;padding:6px 12px;line-height:1}
+  .mobile-est{display:inline-block;order:2;background:var(--gold);color:var(--deep);text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:11px 14px;white-space:nowrap}
+  .brand{order:3;margin-left:auto}
+  .site-nav{inset:0 auto 0 0!important;box-shadow:10px 0 40px rgba(0,0,0,.35)!important}
+}
+@media(max-width:900px){.brand{width:auto!important;flex-shrink:0}}
+@media(max-width:600px){.header-inner{gap:10px}.brand{width:130px!important;min-width:0!important}.brand img{width:130px!important;height:auto;max-height:none}}
+@media(max-width:380px){.header-inner{gap:8px}.brand{width:100px!important;min-width:0!important}.brand img{width:100px!important}.mobile-est{padding:9px 10px;font-size:10px}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -323,7 +335,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <a class="brand" href="index.html" aria-label="Patch and Paint Bros home">
       <img src="assets/patch-paint-bros-header-logo.webp" srcset="assets/patch-paint-bros-header-logo-320.webp 320w, assets/patch-paint-bros-header-logo.webp 578w" sizes="(max-width:600px) 160px, 260px" alt="Patch and Paint Bros — Drywall Finishing, Interior and Exterior Painting">
     </a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU</button>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <a class="mobile-est" href="index.html#contact">Free Estimate</a>
     <div class="nav-scrim" id="navScrim"></div>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="index.html#services">Services</a>
@@ -498,12 +511,12 @@ document.querySelectorAll('.gallery-filter').forEach(button=>{
   var nav = document.querySelector('.site-nav');
   var scrim = document.getElementById('navScrim');
   if(!btn || !nav) return;
-  function closeNav(){ nav.classList.remove('open'); scrim.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open navigation'); }
+  function closeNav(){ nav.classList.remove('open'); scrim.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open navigation'); btn.textContent='☰'; }
   function toggleNav(){
     var open = nav.classList.toggle('open');
     scrim.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    btn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); btn.textContent = open ? '✕' : '☰';
   }
   btn.addEventListener('click', toggleNav);
   scrim.addEventListener('click', closeNav);

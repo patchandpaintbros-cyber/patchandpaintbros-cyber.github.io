@@ -388,6 +388,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:600px){.hero-content h1{font-size:clamp(44px,12vw,68px)}.hero-buttons{flex-wrap:wrap}.hero-buttons .btn{min-height:48px}.ppb-submit{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.path-card{transition:none!important}}
 </style>
+<style id="mobile-header">
+@media(max-width:900px){
+  .menu{order:1;margin-left:0!important;position:relative;z-index:61}
+  .header-actions{display:flex!important;order:2}
+  .header-actions .btn.small{padding:11px 14px;font-size:11px;white-space:nowrap}
+  .brand{order:3;margin-left:auto;width:auto;flex-shrink:0}
+  .site-header nav{inset:0 auto 0 0;box-shadow:10px 0 40px rgba(0,0,0,.35)}
+  .nav-scrim{z-index:49}
+}
+@media(max-width:600px){.site-header{padding:10px 14px;gap:10px}.brand{padding:7px 12px;width:154px!important;min-width:0!important}.brand img{width:130px}}
+@media(max-width:380px){.site-header{gap:8px}.brand{padding:6px 9px;width:118px!important;min-width:0!important}.brand img{width:100px}.header-actions .btn.small{padding:9px 10px;font-size:10px}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#top">Skip to main content</a>
@@ -542,12 +554,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   var nav = document.querySelector('.site-header nav');
   var scrim = document.getElementById('navScrim');
   if(!btn || !nav) return;
-  function closeNav(){ nav.classList.remove('open'); scrim.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open navigation'); }
+  function closeNav(){ nav.classList.remove('open'); scrim.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open navigation'); btn.textContent='☰'; }
   function toggleNav(){
     var open = nav.classList.toggle('open');
     scrim.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    btn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); btn.textContent = open ? '✕' : '☰';
   }
   btn.addEventListener('click', toggleNav);
   scrim.addEventListener('click', closeNav);
