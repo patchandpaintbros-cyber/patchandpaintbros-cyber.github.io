@@ -326,6 +326,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:600px){.header-inner{gap:10px}.brand{width:130px!important;min-width:0!important}.brand img{width:130px!important;height:auto;max-height:none}}
 @media(max-width:380px){.header-inner{gap:8px}.brand{width:100px!important;min-width:0!important}.brand img{width:100px!important}.mobile-est{padding:9px 10px;font-size:10px}}
 </style>
+<style id="ba-slider">
+.ba-slider{position:relative;overflow:hidden;background:var(--deep);aspect-ratio:3/4;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 85%;display:block;pointer-events:none}
+.ba-slider .ba-before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba-slider .ba-line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 10px rgba(0,0,0,.45);pointer-events:none}
+.ba-slider .ba-knob{position:absolute;top:50%;left:var(--pos,50%);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);display:grid;place-items:center;pointer-events:none}
+.ba-slider .ba-knob svg{width:26px;height:26px;fill:var(--navy)}
+.ba-slider .ba-lbl{position:absolute;top:12px;background:rgba(14,24,33,.82);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:2px;pointer-events:none}
+.ba-slider .ba-lbl.l{left:12px}.ba-slider .ba-lbl.r{right:12px}
+.ba-slider input[type=range]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none}
+.ba-slider input[type=range]:focus-visible~.ba-knob{outline:3px solid var(--gold);outline-offset:3px}
+.compare{padding:85px 0}.compare .ba-slider{aspect-ratio:1/1}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.compare-card{margin:0;background:#fff;box-shadow:0 14px 34px rgba(18,30,39,.10)}
+.compare-card figcaption{padding:16px 18px 20px}
+.compare-card figcaption span{display:block;font-size:10px;font-weight:800;letter-spacing:.16em;color:var(--gold)}
+.compare-card figcaption strong{display:block;font:700 22px "Playfair Display","Playfair Fallback",Georgia,serif;margin:6px 0}
+.compare-card figcaption p{margin:0;font-size:13px;line-height:1.6;color:#66727a}
+.compare-card figcaption small{display:block;margin-top:6px;font-size:11px;color:#8a949a}
+.compare-hint{text-align:center;font-size:12px;color:#66727a;margin:18px 0 0}
+.video-trio{display:grid;grid-template-columns:repeat(3,minmax(0,300px));gap:22px;justify-content:center}
+.video-trio figure{margin:0}
+.video-trio figcaption{text-align:center;font-size:12px;font-weight:700;margin-top:10px;color:#3a4650}
+.project-media .ba-slider{aspect-ratio:auto;height:100%}
+@media(max-width:900px){.compare-grid{grid-template-columns:1fr 1fr}.video-trio{grid-template-columns:repeat(2,minmax(0,300px))}}
+@media(max-width:600px){.compare-grid{grid-template-columns:1fr}.video-trio{grid-template-columns:minmax(0,320px)}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -380,6 +407,42 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     </div>
 
     <div class="project-gallery">
+      <article class="project-card" data-category="repair">
+        <div class="project-media"><div class="ba-slider"><img src="assets/photos/ba-dining-drywall-after.jpg" alt="After: dining room drywall finished smooth and paint-ready" loading="lazy"><img class="ba-before" src="assets/photos/ba-dining-drywall-before.jpg" alt="Before: dining room walls patched and stained, not yet finished" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
+        <div class="project-copy"><span>DRYWALL REPAIR · DRAG TO COMPARE</span><h3>Dining room</h3><p>Patched, stained walls taken to a smooth, paint-ready finish.</p></div>
+      </article>
+      <article class="project-card" data-category="interior">
+        <div class="project-media"><div class="ba-slider"><img src="assets/photos/ba-stairs-paint-after.jpg" alt="After: staircase railing and spindles painted white" loading="lazy"><img class="ba-before" src="assets/photos/ba-stairs-paint-before.jpg" alt="Before: staircase with dark stained railing and spindles" loading="lazy"><span class="ba-lbl l">Before paint</span><span class="ba-lbl r">After paint</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
+        <div class="project-copy"><span>INTERIOR PAINTING · DRAG TO COMPARE</span><h3>Staircase</h3><p>Dark railing and spindles painted a crisp, clean white.</p></div>
+      </article>
+      <article class="project-card" data-category="interior">
+        <div class="project-media"><div class="ba-slider"><img src="assets/photos/ba-living-paint-after.jpg" alt="After: living room with brick fireplace painted white" loading="lazy"><img class="ba-before" src="assets/photos/ba-living-paint-before.jpg" alt="Before: living room with red brick fireplace" loading="lazy"><span class="ba-lbl l">Before paint</span><span class="ba-lbl r">After paint</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
+        <div class="project-copy"><span>INTERIOR PAINTING · DRAG TO COMPARE</span><h3>Brick fireplace</h3><p>Red brick painted clean white to brighten the whole room. New flooring by another contractor.</p></div>
+      </article>
+      <article class="project-card" data-category="exterior">
+        <div class="project-media"><video style="object-fit:contain" src="assets/video/milton-before-after.mp4" poster="assets/photos/milton-before-after-poster.jpg" muted loop playsinline controls preload="none"></video></div>
+        <div class="project-copy"><span>EXTERIOR PAINTING</span><h3>Primer to finished</h3><p>Full exterior repaint, every side of the house, McClelland, IA.</p></div>
+      </article>
+      <article class="project-card" data-category="exterior">
+        <div class="project-media" data-video="assets/video/milton-working.mp4"><img src="assets/photos/milton-exterior-porch.jpg" alt="Brown siding with white trim and a stained porch railing" loading="lazy"></div>
+        <div class="project-copy"><span>EXTERIOR PAINTING</span><h3>Siding, trim and porch</h3><p>Deep brown siding with crisp white trim, McClelland, IA.</p></div>
+      </article>
+      <article class="project-card" data-category="interior">
+        <div class="project-media"><video style="object-fit:contain" src="assets/video/full-house-paint-split.mp4" poster="assets/photos/full-house-paint-split-poster.jpg" muted loop playsinline controls preload="none"></video></div>
+        <div class="project-copy"><span>INTERIOR PAINTING</span><h3>Room by room, before and after</h3><p>A full-house interior repaint, every room side by side, Omaha. New flooring by another contractor.</p></div>
+      </article>
+      <article class="project-card" data-category="interior">
+        <div class="project-media" data-video="assets/video/full-house-paint-working.mp4"><img src="assets/photos/full-house-kitchen-builtins.jpg" alt="Kitchen built-in cabinets and shelving sprayed white" loading="lazy"></div>
+        <div class="project-copy"><span>CABINET SPRAYING</span><h3>Built-ins, sprayed smooth</h3><p>Kitchen cabinets and built-in shelving sprayed white. Tap to watch the work.</p></div>
+      </article>
+      <article class="project-card" data-category="interior">
+        <div class="project-media" data-video="assets/video/full-house-paint-snap.mp4"><img src="assets/photos/full-house-staircase.jpg" alt="Staircase with white railing and spindles" loading="lazy"></div>
+        <div class="project-copy"><span>INTERIOR PAINTING</span><h3>Stairs and railings</h3><p>Railing, spindles and walls painted, Omaha.</p></div>
+      </article>
+      <article class="project-card" data-category="interior">
+        <div class="project-media"><img src="assets/photos/full-house-basement.jpg" alt="Finished basement, walls and ceiling painted" loading="lazy"></div>
+        <div class="project-copy"><span>INTERIOR PAINTING</span><h3>Finished basement</h3><p>Basement walls and ceiling painted, Omaha.</p></div>
+      </article>
       <article class="project-card" data-category="repair">
         <div class="project-media project-media-ba">
           <div class="ba-half"><img src="assets/photos/gallery2-repair-before.jpg" alt="Before: bathroom drywall repair" loading="lazy"><span class="ba-tag">Before</span></div>
@@ -556,6 +619,15 @@ document.querySelectorAll('.gallery-filter').forEach(button=>{
   lbClose.addEventListener('click', closeLightbox);
   lb.addEventListener('click', function(e){ if(e.target === lb) closeLightbox(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.ba-slider').forEach(function(s){
+    var r=s.querySelector('input[type=range]');
+    function set(){ s.style.setProperty('--pos', r.value + '%'); }
+    r.addEventListener('input', set); set();
+  });
 })();
 </script>
 </body>

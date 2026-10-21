@@ -153,3 +153,13 @@ privacy.html/terms.html in the zip were identical to the current ones.
 - Per Chris: on phones and tablets the header is now ☰ + Free Estimate on the LEFT and the logo on the RIGHT. The menu slides in from the left. The ☰ turns into ✕ while it's open. Gallery's "MENU" text button became ☰ to match, and the gallery got a Free Estimate header button too (phones/tablets only). Computer layout is unchanged (logo left, links right).
 - Removed an old 220px minimum width on the logo box for phones; it made the page scroll sideways once the logo moved right.
 - Added Facebook (https://www.facebook.com/profile.php?id=61595272553894) to the homepage: an icon in the top bar next to Instagram/TikTok, and a link in the footer "Follow our work" line.
+
+## Update (10/20/26) — Big content + quality pass (Chris: "better the website... do what is best")
+- **New homepage photo (hero):** swapped the soft gray-house shot for a sharp Milton House exterior (finished deep-brown siding, white trim, blue sky). WebP in 720/1152/1920 widths. On phones it's shifted left so more of the house shows. Old hero files are still in assets/.
+- **New "Drag to compare" section** on the homepage (after "The details make the difference"): 3 real before/after sliders from the Full House Remodel, same spot, lined up by hand on matching points (chandelier, railing, fireplace). Dining room (drywall repair), Staircase (railing painted white), Brick fireplace (brick painted white, with the note "New flooring by another contractor" so we don't take credit for David's floors). Works with mouse, finger and keyboard. The same 3 sliders are the first 3 cards on gallery.html.
+- **"See us in action" video section** now shows 3 videos instead of 1: drywall snap (existing), interior paint snap (new) and Milton primer → finished exterior (new). They only download when someone presses play (preload none), so the page stays fast.
+- **Homepage photo grid:** 9 → 12. Added Milton exterior (plays the Milton working video), Full House living room (plays the paint snap) and kitchen built-ins (plays the paint/spray working video, faces blurred).
+- **Gallery:** 19 → 29 cards. Added the 3 sliders, the Milton before/after video, the Milton porch photo, the full-house paint split video (with the flooring note), kitchen built-ins, staircase and basement.
+- New videos are all 720x1280, silent, web-compressed (2–6 MB each): milton-before-after, milton-working, full-house-paint-snap, full-house-paint-split, full-house-paint-working.
+- Tested on a 1440px desktop and a 390px phone: no JS errors, no broken files, no sideways scrolling, and the gallery filter still works.
+- NOT done (parked by Chris): rebuilding the older low-res Tia Tita/basement videos (432–540px) from raw footage.

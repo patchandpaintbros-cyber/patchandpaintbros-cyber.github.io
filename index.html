@@ -400,6 +400,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:600px){.site-header{padding:10px 14px;gap:10px}.brand{padding:7px 12px;width:154px!important;min-width:0!important}.brand img{width:130px}}
 @media(max-width:380px){.site-header{gap:8px}.brand{padding:6px 9px;width:118px!important;min-width:0!important}.brand img{width:100px}.header-actions .btn.small{padding:9px 10px;font-size:10px}}
 </style>
+<style id="ba-slider">
+.ba-slider{position:relative;overflow:hidden;background:var(--deep);aspect-ratio:3/4;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 85%;display:block;pointer-events:none}
+.ba-slider .ba-before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba-slider .ba-line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 10px rgba(0,0,0,.45);pointer-events:none}
+.ba-slider .ba-knob{position:absolute;top:50%;left:var(--pos,50%);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);display:grid;place-items:center;pointer-events:none}
+.ba-slider .ba-knob svg{width:26px;height:26px;fill:var(--navy)}
+.ba-slider .ba-lbl{position:absolute;top:12px;background:rgba(14,24,33,.82);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:2px;pointer-events:none}
+.ba-slider .ba-lbl.l{left:12px}.ba-slider .ba-lbl.r{right:12px}
+.ba-slider input[type=range]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none}
+.ba-slider input[type=range]:focus-visible~.ba-knob{outline:3px solid var(--gold);outline-offset:3px}
+.compare{padding:85px 0}.compare .ba-slider{aspect-ratio:1/1}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.compare-card{margin:0;background:#fff;box-shadow:0 14px 34px rgba(18,30,39,.10)}
+.compare-card figcaption{padding:16px 18px 20px}
+.compare-card figcaption span{display:block;font-size:10px;font-weight:800;letter-spacing:.16em;color:var(--gold)}
+.compare-card figcaption strong{display:block;font:700 22px "Playfair Display","Playfair Fallback",Georgia,serif;margin:6px 0}
+.compare-card figcaption p{margin:0;font-size:13px;line-height:1.6;color:#66727a}
+.compare-card figcaption small{display:block;margin-top:6px;font-size:11px;color:#8a949a}
+.compare-hint{text-align:center;font-size:12px;color:#66727a;margin:18px 0 0}
+.video-trio{display:grid;grid-template-columns:repeat(3,minmax(0,300px));gap:22px;justify-content:center}
+.video-trio figure{margin:0}
+.video-trio figcaption{text-align:center;font-size:12px;font-weight:700;margin-top:10px;color:#3a4650}
+.project-media .ba-slider{aspect-ratio:auto;height:100%}
+@media(max-width:900px){.compare-grid{grid-template-columns:1fr 1fr}.video-trio{grid-template-columns:repeat(2,minmax(0,300px))}}
+@media(max-width:600px){.hero-bg{object-position:38% 55%!important}.compare-grid{grid-template-columns:1fr}.video-trio{grid-template-columns:minmax(0,320px)}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#top">Skip to main content</a>
@@ -415,7 +442,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <a class="estimate-tab" href="#contact">FREE ESTIMATE</a>
 <main id="top">
 <section class="hero">
-  <img class="hero-bg" fetchpriority="high" src="assets/photos/hero-gray-house-1152.webp" srcset="assets/photos/hero-gray-house-720.webp 720w, assets/photos/hero-gray-house-1152.webp 1152w" sizes="100vw" alt="Exterior house repaint completed by Patch and Paint Bros in the Omaha metro">
+  <img class="hero-bg" style="object-position:50% 55%" fetchpriority="high" src="assets/photos/hero-milton-1152.webp" srcset="assets/photos/hero-milton-720.webp 720w, assets/photos/hero-milton-1152.webp 1152w, assets/photos/hero-milton-1920.webp 1920w" sizes="100vw" alt="Home exterior painted deep brown with white trim by Patch and Paint Bros">
   <div class="hero-scrim"></div>
   <div class="hero-content">
     <p class="eyebrow">DRYWALL FINISHING · INTERIOR & EXTERIOR PAINTING</p>
@@ -445,6 +472,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <a class="text-link" href="gallery.html">View more projects →</a>
   </div>
 </section>
+
+<section class="compare" id="before-after"><div class="wrap">
+  <div class="section-head"><div><p class="eyebrow gold">DRAG TO COMPARE</p><h2>Same room.<br><em>Our finish.</em></h2></div><p>Slide each photo to see the before and after. Real photos from one of our full-house jobs in Omaha, same spot, before and after our work.</p></div>
+  <div class="compare-grid">
+    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-dining-drywall-after.jpg" alt="After: dining room drywall finished smooth and paint-ready" loading="lazy"><img class="ba-before" src="assets/photos/ba-dining-drywall-before.jpg" alt="Before: dining room walls patched and stained, not yet finished" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>DRYWALL REPAIR</span><strong>Dining room</strong><p>Patched, stained walls taken to a smooth, paint-ready finish.</p></figcaption></figure>
+    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-stairs-paint-after.jpg" alt="After: staircase railing and spindles painted white" loading="lazy"><img class="ba-before" src="assets/photos/ba-stairs-paint-before.jpg" alt="Before: staircase with dark stained railing and spindles" loading="lazy"><span class="ba-lbl l">Before paint</span><span class="ba-lbl r">After paint</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>INTERIOR PAINTING</span><strong>Staircase</strong><p>Dark railing and spindles painted a crisp, clean white.</p></figcaption></figure>
+    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-living-paint-after.jpg" alt="After: living room with brick fireplace painted white" loading="lazy"><img class="ba-before" src="assets/photos/ba-living-paint-before.jpg" alt="Before: living room with red brick fireplace" loading="lazy"><span class="ba-lbl l">Before paint</span><span class="ba-lbl r">After paint</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>INTERIOR PAINTING</span><strong>Brick fireplace</strong><p>Red brick painted clean white to brighten the whole room.</p><small>New flooring by another contractor.</small></figcaption></figure>
+  </div>
+  <p class="compare-hint">Drag the handle left and right ↔</p>
+</div></section>
 
 <section class="capabilities">
   <div class="cap-title"><p class="eyebrow">CORE CAPABILITIES</p><h2>One standard.<br><em>Professional finish.</em></h2></div>
@@ -478,13 +515,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </div></section>
 
 <section class="video-section">
-  <div class="section-head"><div><p class="eyebrow gold">SEE US IN ACTION</p><h2>Real job-site footage.<br><em>Not stock.</em></h2></div><p>A full-house drywall finish, room by room. Watch each space go from damaged to done in a snap.</p></div>
-  <div class="video-frame-wrap"><video class="video-frame" src="assets/video/full-house-remodel-snap.mp4" poster="assets/photos/full-house-remodel-snap-poster.jpg" muted loop playsinline controls preload="metadata"></video></div>
+  <div class="wrap"><div class="section-head"><div><p class="eyebrow gold">SEE US IN ACTION</p><h2>Real job-site footage.<br><em>Not stock.</em></h2></div><p>Real before-and-afters from our own jobs. Watch rooms go from damaged to done, and a full exterior go from primer to finished.</p></div>
+  <div class="video-trio">
+    <figure><video class="video-frame" src="assets/video/full-house-remodel-snap.mp4" poster="assets/photos/full-house-remodel-snap-poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Drywall: damaged to done</figcaption></figure>
+    <figure><video class="video-frame" src="assets/video/full-house-paint-snap.mp4" poster="assets/photos/full-house-paint-snap-poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Interior paint: same house, finished</figcaption></figure>
+    <figure><video class="video-frame" src="assets/video/milton-before-after.mp4" poster="assets/photos/milton-before-after-poster.jpg" muted loop playsinline controls preload="none"></video><figcaption>Exterior: primer to finished</figcaption></figure>
+  </div></div>
 </section>
 
 <section class="gallery" id="gallery">
   <div class="section-head"><div><p class="eyebrow gold">REAL JOBS · REAL PHOTOS</p><h2>The proof is<br><em>on the walls.</em></h2></div><p>Explore real Patch & Paint Bros project photos, finished surfaces, and work-in-progress details from drywall and painting jobs throughout the Omaha metro.</p></div>
   <div class="gallery-grid">
+    <figure data-video="assets/video/milton-working.mp4"><img src="assets/photos/milton-exterior-1.jpg" alt="Full exterior repaint, deep brown siding with white trim" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Full Exterior Repaint<br>McClelland, IA</figcaption></figure>
+    <figure data-video="assets/video/full-house-paint-snap.mp4"><img src="assets/photos/full-house-living-room.jpg" alt="Living room repainted, brick fireplace painted white" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Interior Painting<br>Omaha</figcaption></figure>
+    <figure data-video="assets/video/full-house-paint-working.mp4"><img src="assets/photos/full-house-kitchen-builtins.jpg" alt="Kitchen built-in cabinets and shelving sprayed white" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Cabinet &amp; Built-in Spraying<br>Omaha</figcaption></figure>
     <figure><img src="assets/photos/gallery-deck-staining.jpg" alt="Deck staining project, Omaha metro" loading="lazy"><figcaption>Deck Staining<br>Omaha Metro</figcaption></figure>
     <figure data-video="assets/video/tia-tita-main-house.mp4"><img src="assets/photos/tia-tita-main-house.jpg" alt="Full exterior house repaint with dark garage doors, Bellevue" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Exterior Painting<br>Bellevue, NE</figcaption></figure>
     <figure><img src="assets/photos/gallery-cabinet-refinish.jpg" alt="Cabinet refinishing project" loading="lazy"><figcaption>Cabinet Refinishing<br>Omaha Metro</figcaption></figure>
@@ -651,6 +695,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   lbClose.addEventListener('click', closeLightbox);
   lb.addEventListener('click', function(e){ if(e.target === lb) closeLightbox(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.ba-slider').forEach(function(s){
+    var r=s.querySelector('input[type=range]');
+    function set(){ s.style.setProperty('--pos', r.value + '%'); }
+    r.addEventListener('input', set); set();
+  });
 })();
 </script>
 </body>
