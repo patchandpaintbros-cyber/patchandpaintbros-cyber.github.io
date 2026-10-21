@@ -163,3 +163,7 @@ privacy.html/terms.html in the zip were identical to the current ones.
 - New videos are all 720x1280, silent, web-compressed (2–6 MB each): milton-before-after, milton-working, full-house-paint-snap, full-house-paint-split, full-house-paint-working.
 - Tested on a 1440px desktop and a 390px phone: no JS errors, no broken files, no sideways scrolling, and the gallery filter still works.
 - NOT done (parked by Chris): rebuilding the older low-res Tia Tita/basement videos (432–540px) from raw footage.
+
+## Update (10/20/26) — Privacy + garage photo
+- Removed the customer street address from the basement gallery card ("1807 South 220th Street" → "Omaha metro"). Standing rule from Chris: never show customer addresses on the site; city/area only. Scanned all 4 pages; that was the only one.
+- Tia Tita garage photo (homepage grid + gallery) swapped from the odd straight-up gutter shot to a clean side view of the whole garage (`tia-tita-garage-side.jpg`). Skipped the front-facing shot because the customer's license plate was readable.
