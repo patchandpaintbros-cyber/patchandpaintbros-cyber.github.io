@@ -167,3 +167,6 @@ privacy.html/terms.html in the zip were identical to the current ones.
 ## Update (10/20/26) — Privacy + garage photo
 - Removed the customer street address from the basement gallery card ("1807 South 220th Street" → "Omaha metro"). Standing rule from Chris: never show customer addresses on the site; city/area only. Scanned all 4 pages; that was the only one.
 - Tia Tita garage photo (homepage grid + gallery) swapped from the odd straight-up gutter shot to a clean side view of the whole garage (`tia-tita-garage-side.jpg`). Skipped the front-facing shot because the customer's license plate was readable.
+
+## Update (10/24/26) — New slogan
+- Homepage headline changed from "We repair. We paint. We perfect." to **"Patch it up. Paint it right. Leave it to the Bros."** (Chris's pick, a mix of two options). "the Bros." is kept together so it never leaves "Bros." alone on a line on small phones. Checked at 1440px, 390px and 360px: no sideways scroll.
