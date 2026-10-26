@@ -170,3 +170,44 @@ privacy.html/terms.html in the zip were identical to the current ones.
 
 ## Update (10/24/26) — New slogan
 - Homepage headline changed from "We repair. We paint. We perfect." to **"Patch it up. Paint it right. Leave it to the Bros."** (Chris's pick, a mix of two options). "the Bros." is kept together so it never leaves "Bros." alone on a line on small phones. Checked at 1440px, 390px and 360px: no sideways scroll.
+
+## Note (10/24/26) — Folder moved
+- This website folder now lives at `Documents/Asher Brain/02 - Patch and Paint Bros/Patch and Paint Bros Website` (moved out of Downloads at Chris's request). Nothing on the live site changed.
+
+## Update (10/25/26) — Gallery reorganized by job (Chris: "organize the good jobs... especially the gallery")
+- gallery.html: replaced the mixed 29-card grid with **18 job sections**. Each has a header (service · city, job name, one-line description) and that job's photos and videos together (64 tiles total). Filters now show/hide whole jobs; "Exterior Painting" renamed "Exterior & Decks".
+- **New jobs on the site:** Modern Exterior Repaint (Omaha), Built-In Cabinets, Gray Craftsman Home (photos + video), Two-Story Deck, Red Deck & Stairs, Backyard Deck, Blair bathroom, Commercial Building, Great Room & Theater, New Build Bedrooms, Vaulted Great Room & Loft.
+- **Sharper videos:** Tia Tita (house/garage/dog house), Downtown, basement and others now use the 10/25 HD rebuilds (720x1280 web copies, silent, no ending card, load only when tapped). Old video files kept in assets/video.
+- Privacy: commercial video starts after a worker walks out of frame; faces blurred per the TikTok batch. City/area only, no addresses.
+- Dark-cabinet photos had baked-in dark bars, cropped out. Slider labels shortened to Before/After so they don't overlap on phones.
+- Tested 1440px and 390px: no JS errors, no broken images, no sideways scroll; filter and video lightbox work. Homepage NOT changed.
+
+## Update (10/25/26, later) — Fireplace out, homepage refresh, Repairs fix
+- Chris: the brick fireplace looked ugly. Replaced the fireplace before/after slider (homepage "Drag to compare" + gallery) with a **Bedroom drywall repair** slider (Full House pair 12, auto-aligned on the fan/window/ceiling light). Also removed the fireplace living-room tile from the homepage grid. New files: ba-bedroom-drywall-before/after.jpg (900x1200).
+- Homepage photo grid (12): added Modern Exterior Repaint, Two-Story Deck, Built-In Cabinets, Red Deck, Gray House; Tia Tita, basement, Downtown and new-construction tiles now play the 10/25 HD videos. Dropped the old deck-staining, cabinet-refinish and second Downtown hallway tiles.
+- Chris: "Repairs" should be real repairs. The old "Bathroom Drywall" before/after was actually a garage, so it's now "Garage Drywall" under Drywall. Repairs filter = Full House Remodel + Blair bathroom.
+- Retested 1440px / 390px on both pages: no errors, no broken images, no sideways scroll.
+
+## Update (10/25/26, later 2) — No blur, new job names, small towns hidden
+- Chris: no blurry photos/videos anywhere. Measured sharpness of every image/video on both pages, then checked the softest at actual size. Removed: Blair bathroom video, hallway repaint video (whole job), Downtown video, great room video + 2 soft great room photos, new-build video, commercial building photos + video (whole job). Homepage Downtown and new-construction tiles are now photos only (no video).
+- Removed the Gray Craftsman house from both pages (Chris). Homepage grid 12th tile is now the brown deck.
+- Small towns: "McClelland, IA" → "Iowa"; "Blair" → "Nebraska". City only for big areas (Omaha, Bellevue).
+- Job names are now customer-facing titles instead of our internal names, e.g. Milton House → "Primer to Chocolate Brown", Full House → "Three Floors, Top to Bottom", Tia Tita → "Every Building on the Lot".
+- Fixed a leftover preload of the old gray-house hero image (it downloaded on every visit but wasn't shown); now preloads the Milton hero that's actually used.
+- Gallery: 15 jobs / 48 tiles. Homepage grid: 12.
+- Blair bathroom job retitled "Small Bathroom, Big Upgrade" (Chris: even a small bathroom or shower can get a new look).
+
+## Update (10/25/26, later 3) — Matched before/afters only (Chris rule)
+- Standing rule: every before/after pair must be the same spot and angle (blue board before → same blue area after), best angle available.
+- Basement: replaced the mismatched pair with two true pairs: blue board IMG_5767 → IMG_5911 (same yellow box/angle) and narrow room IMG_5783 → IMG_5923. New files basement-blue-*/basement-room-*.
+- Garage: before IMG_5636 → after IMG_5709 (same wall, same spot). New files garage-wall-*.
+- Built-ins: after now Photo 2 (straight-on, matches the before) instead of the angled shot.
+- Modern exterior: no before matched any after angle, so the Before photo was removed; the video shows the real before/during/after.
+- Hero note under the headline: "Serving Omaha · Bellevue · Papillion · Surrounding Areas" → "Serving the Omaha Metro" (Chris). Town list kept in Service Areas, FAQ, footer and Google data (local search).
+
+## Update (10/25/26, later 4) — Homepage touch-ups (Chris: "what else needs fixing")
+- "The details make the difference" before/after: swapped the letterboxed cabinet photos for the matched, cropped built-ins pair (darkcab-before/after).
+- "What can we help with?" cards: old blurry backgrounds replaced. Residential = Bellevue house exterior (pathway-residential-2.webp), Repairs = patched bedroom walls (pathway-repairs-2.webp). Old files kept.
+- Removed the empty beige bands around the Preparation/Details/Communication boxes (boxes now outlined, no filled background).
+- Footer: removed the duplicate Contact + Quick Links row; kept "Follow our work" (Instagram/TikTok/Facebook).
+- "See us in action" interior paint video: now the HD rebuild with the brick fireplace stretch cut (17.2–20.8s) and no ending card (full-house-paint-snap-hd.mp4). TikTok #09 got the same fireplace cut.

@@ -352,6 +352,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .project-media .ba-slider{aspect-ratio:auto;height:100%}
 @media(max-width:900px){.compare-grid{grid-template-columns:1fr 1fr}.video-trio{grid-template-columns:repeat(2,minmax(0,300px))}}
 @media(max-width:600px){.compare-grid{grid-template-columns:1fr}.video-trio{grid-template-columns:minmax(0,320px)}}
+
+/* Gallery organized by job (10/25/26) */
+.job-list{display:grid;gap:54px}
+.job-block[hidden]{display:none}
+.job-head{border-left:3px solid var(--gold);padding-left:16px;margin-bottom:18px;max-width:720px}
+.job-head span{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8C7241;margin-bottom:6px}
+.job-head h3{font-family:"Playfair Display","Playfair Fallback",Georgia,serif;font-size:clamp(24px,3vw,32px);color:var(--deep);margin:0 0 6px}
+.job-head p{margin:0;font-size:14px;line-height:1.6;color:#5b6670}
+.job-media{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.job-tile{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--deep);border-radius:4px}
+.job-tile>img{width:100%;height:100%;object-fit:cover;display:block}
+.job-tile .ba-slider{aspect-ratio:auto;height:100%}
+.job-tile .ba-tag{position:absolute;top:10px;left:10px;background:rgba(14,24,33,.82);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:2px;pointer-events:none;z-index:2}
+@media(max-width:600px){.job-media{grid-template-columns:1fr 1fr;gap:10px}.job-list{gap:42px}}
 </style>
 </head>
 <body>
@@ -403,131 +417,132 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <button class="gallery-filter" data-filter="drywall">Drywall</button>
       <button class="gallery-filter" data-filter="repair">Repairs</button>
       <button class="gallery-filter" data-filter="interior">Interior Painting</button>
-      <button class="gallery-filter" data-filter="exterior">Exterior Painting</button>
+      <button class="gallery-filter" data-filter="exterior">Exterior &amp; Decks</button>
     </div>
 
-    <div class="project-gallery">
-      <article class="project-card" data-category="repair">
-        <div class="project-media"><div class="ba-slider"><img src="assets/photos/ba-dining-drywall-after.jpg" alt="After: dining room drywall finished smooth and paint-ready" loading="lazy"><img class="ba-before" src="assets/photos/ba-dining-drywall-before.jpg" alt="Before: dining room walls patched and stained, not yet finished" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
-        <div class="project-copy"><span>DRYWALL REPAIR · DRAG TO COMPARE</span><h3>Dining room</h3><p>Patched, stained walls taken to a smooth, paint-ready finish.</p></div>
-      </article>
-      <article class="project-card" data-category="interior">
-        <div class="project-media"><div class="ba-slider"><img src="assets/photos/ba-stairs-paint-after.jpg" alt="After: staircase railing and spindles painted white" loading="lazy"><img class="ba-before" src="assets/photos/ba-stairs-paint-before.jpg" alt="Before: staircase with dark stained railing and spindles" loading="lazy"><span class="ba-lbl l">Before paint</span><span class="ba-lbl r">After paint</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
-        <div class="project-copy"><span>INTERIOR PAINTING · DRAG TO COMPARE</span><h3>Staircase</h3><p>Dark railing and spindles painted a crisp, clean white.</p></div>
-      </article>
-      <article class="project-card" data-category="interior">
-        <div class="project-media"><div class="ba-slider"><img src="assets/photos/ba-living-paint-after.jpg" alt="After: living room with brick fireplace painted white" loading="lazy"><img class="ba-before" src="assets/photos/ba-living-paint-before.jpg" alt="Before: living room with red brick fireplace" loading="lazy"><span class="ba-lbl l">Before paint</span><span class="ba-lbl r">After paint</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
-        <div class="project-copy"><span>INTERIOR PAINTING · DRAG TO COMPARE</span><h3>Brick fireplace</h3><p>Red brick painted clean white to brighten the whole room. New flooring by another contractor.</p></div>
-      </article>
-      <article class="project-card" data-category="exterior">
-        <div class="project-media"><video style="object-fit:contain" src="assets/video/milton-before-after.mp4" poster="assets/photos/milton-before-after-poster.jpg" muted loop playsinline controls preload="none"></video></div>
-        <div class="project-copy"><span>EXTERIOR PAINTING</span><h3>Primer to finished</h3><p>Full exterior repaint, every side of the house, McClelland, IA.</p></div>
-      </article>
-      <article class="project-card" data-category="exterior">
-        <div class="project-media" data-video="assets/video/milton-working.mp4"><img src="assets/photos/milton-exterior-porch.jpg" alt="Brown siding with white trim and a stained porch railing" loading="lazy"></div>
-        <div class="project-copy"><span>EXTERIOR PAINTING</span><h3>Siding, trim and porch</h3><p>Deep brown siding with crisp white trim, McClelland, IA.</p></div>
-      </article>
-      <article class="project-card" data-category="interior">
-        <div class="project-media"><video style="object-fit:contain" src="assets/video/full-house-paint-split.mp4" poster="assets/photos/full-house-paint-split-poster.jpg" muted loop playsinline controls preload="none"></video></div>
-        <div class="project-copy"><span>INTERIOR PAINTING</span><h3>Room by room, before and after</h3><p>A full-house interior repaint, every room side by side, Omaha. New flooring by another contractor.</p></div>
-      </article>
-      <article class="project-card" data-category="interior">
-        <div class="project-media" data-video="assets/video/full-house-paint-working.mp4"><img src="assets/photos/full-house-kitchen-builtins.jpg" alt="Kitchen built-in cabinets and shelving sprayed white" loading="lazy"></div>
-        <div class="project-copy"><span>CABINET SPRAYING</span><h3>Built-ins, sprayed smooth</h3><p>Kitchen cabinets and built-in shelving sprayed white. Tap to watch the work.</p></div>
-      </article>
-      <article class="project-card" data-category="interior">
-        <div class="project-media" data-video="assets/video/full-house-paint-snap.mp4"><img src="assets/photos/full-house-staircase.jpg" alt="Staircase with white railing and spindles" loading="lazy"></div>
-        <div class="project-copy"><span>INTERIOR PAINTING</span><h3>Stairs and railings</h3><p>Railing, spindles and walls painted, Omaha.</p></div>
-      </article>
-      <article class="project-card" data-category="interior">
-        <div class="project-media"><img src="assets/photos/full-house-basement.jpg" alt="Finished basement, walls and ceiling painted" loading="lazy"></div>
-        <div class="project-copy"><span>INTERIOR PAINTING</span><h3>Finished basement</h3><p>Basement walls and ceiling painted, Omaha.</p></div>
-      </article>
-      <article class="project-card" data-category="repair">
-        <div class="project-media project-media-ba">
-          <div class="ba-half"><img src="assets/photos/gallery2-repair-before.jpg" alt="Before: bathroom drywall repair" loading="lazy"><span class="ba-tag">Before</span></div>
-          <div class="ba-half"><img src="assets/photos/gallery2-repair-after.jpg" alt="After: bathroom drywall finished" loading="lazy"><span class="ba-tag">After</span></div>
+    <div class="job-list">
+      <article class="job-block" data-category="repair interior">
+        <div class="job-head"><span>Drywall Repair + Interior Painting · Omaha</span><h3>Three Floors, Top to Bottom</h3><p>Three floors of drywall patched and finished, then every room painted. Drag the sliders to compare.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><div class="ba-slider"><img src="assets/photos/ba-dining-drywall-after.jpg" alt="After: dining room drywall" loading="lazy"><img class="ba-before" src="assets/photos/ba-dining-drywall-before.jpg" alt="Before: dining room drywall" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
+          <div class="job-tile"><div class="ba-slider"><img src="assets/photos/ba-bedroom-drywall-after.jpg" alt="After: bedroom walls finished smooth and paint-ready" loading="lazy"><img class="ba-before" src="assets/photos/ba-bedroom-drywall-before.jpg" alt="Before: bedroom walls patched and stained" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
+          <div class="job-tile"><div class="ba-slider"><img src="assets/photos/ba-stairs-paint-after.jpg" alt="After: staircase railing" loading="lazy"><img class="ba-before" src="assets/photos/ba-stairs-paint-before.jpg" alt="Before: staircase railing" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div></div>
+          <div class="job-tile project-media" data-video="assets/video/full-house-paint-split.mp4"><img src="assets/photos/full-house-paint-split-poster.jpg" alt="Room by room before and after (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+          <div class="job-tile project-media" data-video="assets/video/full-house-paint-working.mp4"><img src="assets/photos/full-house-kitchen-builtins.jpg" alt="Kitchen built-ins sprayed white (video)" loading="lazy"><span class="ba-tag">Video</span></div>
         </div>
-        <div class="project-copy"><span>DRYWALL REPAIR</span><h3>Repairs made to blend</h3><p>Bathroom drywall finish, start to finish, same room and angle.</p></div>
       </article>
-      <article class="project-card" data-category="exterior">
-        <div class="project-media"><img src="assets/photos/gallery2-exterior-paint.jpg" alt="Exterior house repaint, Omaha metro" loading="lazy"></div>
-        <div class="project-copy"><span>EXTERIOR PAINTING</span><h3>Full exterior repaint</h3><p>Complete exterior house repaint, Omaha metro.</p></div>
-      </article>
-      <article class="project-card" data-category="interior">
-        <div class="project-media"><video src="assets/video/featured-studio-paint-finish.mp4" poster="assets/photos/featured-video-poster.jpg" muted loop playsinline controls preload="metadata"></video></div>
-        <div class="project-copy"><span>INTERIOR PAINTING</span><h3>Clean lines. Consistent finish.</h3><p>Bold color repainted back to a clean, consistent white.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media"><img src="assets/photos/gallery2-texture-detail.jpg" alt="Drywall texture and corner detail" loading="lazy"></div>
-        <div class="project-copy"><span>TEXTURE & FINISH</span><h3>Details make the difference</h3><p>Close-up corner and ceiling detail, taped and finished.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media"><video src="assets/video/basement-walkthrough.mp4" muted loop playsinline controls preload="metadata"></video></div>
-        <div class="project-copy"><span>THE PROCESS</span><h3>Before to after, full walkthrough</h3><p>Real job-site footage, basement drywall finish start to finish, Omaha metro.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media"><video src="assets/video/downtown-rooms.mp4" poster="assets/photos/downtown-video-poster.jpg" muted loop playsinline controls preload="metadata"></video></div>
-        <div class="project-copy"><span>DRYWALL FINISHING</span><h3>Room by room, floor by floor</h3><p>A full walk through taped and sanded rooms on a downtown high-rise floor.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media" data-video="assets/video/downtown-rooms.mp4"><img src="assets/photos/downtown-hallway-1.jpg" alt="Taped and sanded hallway in a downtown high-rise, large window at the end" loading="lazy"></div>
-        <div class="project-copy"><span>DRYWALL FINISHING</span><h3>Clean corridor lines</h3><p>Hallway drywall finish, downtown high-rise, Omaha.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media"><img src="assets/photos/downtown-room-1.jpg" alt="Angled ceiling and column, taped and sanded drywall" loading="lazy"></div>
-        <div class="project-copy"><span>DRYWALL FINISHING</span><h3>Detail work on angles</h3><p>Tray ceiling and column drywall finish, downtown high-rise.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media"><img src="assets/photos/downtown-room-2.jpg" alt="Finished room with large city-view windows and construction ladder" loading="lazy"></div>
-        <div class="project-copy"><span>DRYWALL FINISHING</span><h3>Built for the view</h3><p>Finished drywall room with floor-to-ceiling windows, downtown Omaha.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media"><img src="assets/photos/downtown-hallway-3.jpg" alt="Long hallway, taped and sanded, warm light at the far end" loading="lazy"></div>
-        <div class="project-copy"><span>DRYWALL FINISHING</span><h3>Long, clean sightlines</h3><p>Corridor drywall finish, downtown high-rise, Omaha.</p></div>
-      </article>
-      <article class="project-card" data-category="repair">
-        <div class="project-media"><img src="assets/photos/downtown-crew-1.jpg" alt="Patch and Paint Bros crew member taping a ceiling seam on a ladder" loading="lazy"></div>
-        <div class="project-copy"><span>THE PROCESS</span><h3>Taping it clean</h3><p>Our crew taping a ceiling seam, downtown high-rise job.</p></div>
-      </article>
-      <article class="project-card" data-category="interior">
-        <div class="project-media"><img src="assets/photos/gallery3-cabinet-detail.jpg" alt="Built-in cabinet, refinished, with fresh paint cans on the floor" loading="lazy"></div>
-        <div class="project-copy"><span>CABINET REFINISHING</span><h3>Built-ins, refreshed</h3><p>Built-in cabinet refinishing, Omaha metro.</p></div>
-      </article>
-      <article class="project-card" data-category="repair">
-        <div class="project-media"><img src="assets/photos/gallery3-bathroom-2.jpg" alt="Finished bathroom wall with glass shower door, drywall repair complete" loading="lazy"></div>
-        <div class="project-copy"><span>DRYWALL REPAIR</span><h3>Another angle, same job</h3><p>Finished bathroom drywall repair, Omaha metro.</p></div>
-      </article>
-      <article class="project-card" data-category="exterior">
-        <div class="project-media"><img src="assets/photos/gallery3-deck-2.jpg" alt="Deck staircase with railing, newly stained" loading="lazy"></div>
-        <div class="project-copy"><span>DECK STAINING</span><h3>Stairs included</h3><p>Deck and stair staining, Omaha metro.</p></div>
-      </article>
-      <article class="project-card" data-category="exterior">
-        <div class="project-media" data-video="assets/video/tia-tita-main-house.mp4"><img src="assets/photos/tia-tita-main-house.jpg" alt="Full exterior house repaint with dark garage doors, Bellevue" loading="lazy"></div>
-        <div class="project-copy"><span>EXTERIOR PAINTING</span><h3>Full exterior, every angle</h3><p>Complete exterior house repaint, Bellevue, NE.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media"><img src="assets/photos/new-construction-2.jpg" alt="New construction great room, coffered ceiling and black-framed windows, taped and sanded" loading="lazy"></div>
-        <div class="project-copy"><span>DRYWALL FINISHING</span><h3>New construction, done right</h3><p>Coffered ceiling and great room drywall finish, new-build home, Omaha metro.</p></div>
-      </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media project-media-ba" data-video="assets/video/basement-walkthrough.mp4">
-          <div class="ba-half"><img src="assets/photos/basement-before.jpg" alt="Before: basement with drywall hung, seams not yet finished" loading="lazy"><span class="ba-tag">Before</span></div>
-          <div class="ba-half"><img src="assets/photos/basement-after.jpg" alt="After: basement drywall mudded, corners finished, ready for paint" loading="lazy"><span class="ba-tag">After</span></div>
+      <article class="job-block" data-category="exterior">
+        <div class="job-head"><span>Exterior Painting · Iowa</span><h3>Primer to Chocolate Brown</h3><p>A full exterior color change: primer coat, then deep brown siding with crisp white trim on every side.</p></div>
+        <div class="job-media">
+          <div class="job-tile project-media" data-video="assets/video/milton-before-after.mp4"><img src="assets/photos/milton-before-after-poster.jpg" alt="Primer to finished, side by side (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+          <div class="job-tile project-media" data-video="assets/video/milton-working.mp4"><img src="assets/photos/milton-exterior-porch.jpg" alt="Brown siding, white trim and porch (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+          <div class="job-tile"><img src="assets/photos/milton-exterior-1.jpg" alt="Finished brown exterior with white trim" loading="lazy"></div>
         </div>
-        <div class="project-copy"><span>DRYWALL FINISHING</span><h3>Basement drywall finish</h3><p>Hung to fully finished, same basement, Omaha metro.</p></div>
       </article>
-      <article class="project-card" data-category="drywall">
-        <div class="project-media" data-video="assets/video/basement-walkthrough.mp4"><img src="assets/photos/basement-finished-2.jpg" alt="Finished basement room, drywall taped, mudded and smooth" loading="lazy"></div>
-        <div class="project-copy"><span>DRYWALL FINISHING</span><h3>Smooth, paint-ready walls</h3><p>Finished basement drywall, Omaha metro.</p></div>
+      <article class="job-block" data-category="exterior">
+        <div class="job-head"><span>Exterior Painting · Omaha</span><h3>Going Dark &amp; Modern</h3><p>Tan siding and blue brick turned into a dark, modern exterior, including the deck railings. Tap the video for the before.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/lawyer-after-3.jpg" alt="Dark deck railings and boards after painting" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/lawyer-after-2.jpg" alt="Dark siding with deck pergola" loading="lazy"></div>
+          <div class="job-tile project-media" data-video="assets/video/lawyer-ladies.mp4"><img src="assets/photos/lawyer-ladies-poster.jpg" alt="Before, during and after (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+        </div>
       </article>
-      <article class="project-card" data-category="exterior">
-        <div class="project-media" data-video="assets/video/tia-tita-garage.mp4"><img src="assets/photos/tia-tita-garage-side.jpg" alt="Detached garage with new white siding and dark trim, Bellevue" loading="lazy"></div>
-        <div class="project-copy"><span>EXTERIOR PAINTING</span><h3>Garage, fully repainted</h3><p>Large detached garage, full exterior repaint, Bellevue, NE.</p></div>
+      <article class="job-block" data-category="exterior">
+        <div class="job-head"><span>Exterior Painting · Bellevue</span><h3>Every Building on the Lot</h3><p>One property, every structure: the house, a large detached garage and even the dog house, all in matching colors.</p></div>
+        <div class="job-media">
+          <div class="job-tile project-media" data-video="assets/video/tia-tita-main-house-hd.mp4"><img src="assets/photos/tia-tita-main-house.jpg" alt="Full house exterior repaint (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+          <div class="job-tile project-media" data-video="assets/video/tia-tita-garage-hd.mp4"><img src="assets/photos/tia-tita-garage-side.jpg" alt="Detached garage, tan to white (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+          <div class="job-tile project-media" data-video="assets/video/tia-tita-doghouse-hd.mp4"><img src="assets/photos/tia-tita-doghouse.jpg" alt="Dog house painted to match (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+        </div>
       </article>
-      <article class="project-card" data-category="exterior">
-        <div class="project-media" data-video="assets/video/tia-tita-doghouse.mp4"><img src="assets/photos/tia-tita-doghouse.jpg" alt="Small structure with fresh exterior paint and covered patio, Bellevue" loading="lazy"></div>
-        <div class="project-copy"><span>EXTERIOR PAINTING</span><h3>Every structure, same standard</h3><p>Detached structure exterior repaint, Bellevue, NE.</p></div>
+      <article class="job-block" data-category="interior">
+        <div class="job-head"><span>Cabinet Spraying · Omaha metro</span><h3>White Built-Ins Go Bold</h3><p>White built-ins sprayed a deep, smooth dark finish, with the room walls painted fresh.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/darkcab-before.jpg" alt="White built-in cabinets before" loading="lazy"><span class="ba-tag">Before</span></div>
+          <div class="job-tile"><img src="assets/photos/darkcab-after.jpg" alt="Built-ins sprayed a dark finish" loading="lazy"><span class="ba-tag">After</span></div>
+          <div class="job-tile project-media" data-video="assets/video/dark-cabinets.mp4"><img src="assets/photos/dark-cabinets-poster.jpg" alt="Spraying the built-ins (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="exterior">
+        <div class="job-head"><span>Deck Staining · Omaha metro</span><h3>Two Levels of Fresh Stain</h3><p>Both levels, every railing and every stair, stained top to bottom.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/twostory-1.jpg" alt="Two-story deck with stained posts and railings" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/twostory-2.jpg" alt="Stained deck staircase" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/gallery3-deck-2.jpg" alt="Upper deck boards and railing" loading="lazy"></div>
+          <div class="job-tile project-media" data-video="assets/video/two-story-deck.mp4"><img src="assets/photos/two-story-deck-poster.jpg" alt="Two-story deck walk-around (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="exterior">
+        <div class="job-head"><span>Deck Staining · Omaha metro</span><h3>Red Deck, Every Step</h3><p>A rich red stain on the deck, railings and full staircase.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/reddeck-1.jpg" alt="Red stained deck and railing" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/reddeck-2.jpg" alt="Red stained staircase" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/reddeck-3.jpg" alt="Red deck stairs from below" loading="lazy"></div>
+          <div class="job-tile project-media" data-video="assets/video/red-deck.mp4"><img src="assets/photos/red-deck-poster.jpg" alt="Red deck walk-around (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="exterior">
+        <div class="job-head"><span>Deck Staining · Omaha metro</span><h3>Faded Deck, Brought Back</h3><p>Sun-faded wood brought back with a rich brown stain.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/browndeck-1.jpg" alt="Brown stained deck and railing" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/browndeck-2.jpg" alt="Stained deck with lattice skirt" loading="lazy"></div>
+          <div class="job-tile project-media" data-video="assets/video/brown-deck.mp4"><img src="assets/photos/brown-deck-poster.jpg" alt="Brown deck walk-around (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="repair drywall">
+        <div class="job-head"><span>Drywall Repair · Nebraska</span><h3>Small Bathroom, Big Upgrade</h3><p>Even a small bathroom or a tired shower area can feel brand new. We patch, tape and texture the walls and ceiling so it all blends in clean.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/blair-1.jpg" alt="Bathroom ceiling and walls being finished" loading="lazy"><span class="ba-tag">In progress</span></div>
+          <div class="job-tile"><img src="assets/photos/blair-2.jpg" alt="Bathroom drywall taped and textured" loading="lazy"><span class="ba-tag">In progress</span></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="drywall">
+        <div class="job-head"><span>Drywall Finishing · Omaha metro</span><h3>Bare Garage to Finished</h3><p>Bare board to a smooth, finished wall. Same spot, same angle.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/garage-wall-before.jpg" alt="Garage wall with bare drywall hung" loading="lazy"><span class="ba-tag">Before</span></div>
+          <div class="job-tile"><img src="assets/photos/garage-wall-after.jpg" alt="Same garage wall taped and mudded" loading="lazy"><span class="ba-tag">After</span></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="drywall">
+        <div class="job-head"><span>Drywall Finishing · Omaha metro</span><h3>Basement, Board to Done</h3><p>A full basement taken from hung board to taped, mudded and paint-ready.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/basement-blue-before.jpg" alt="Blue moisture-resistant board hung, seams open" loading="lazy"><span class="ba-tag">Before</span></div>
+          <div class="job-tile"><img src="assets/photos/basement-blue-after.jpg" alt="Same blue-board room taped and mudded" loading="lazy"><span class="ba-tag">After</span></div>
+          <div class="job-tile"><img src="assets/photos/basement-room-before.jpg" alt="Narrow basement room with bare drywall" loading="lazy"><span class="ba-tag">Before</span></div>
+          <div class="job-tile"><img src="assets/photos/basement-room-after.jpg" alt="Same room taped, mudded and finished" loading="lazy"><span class="ba-tag">After</span></div>
+          <div class="job-tile project-media" data-video="assets/video/basement-drywall-hd.mp4"><img src="assets/photos/basement-drywall-hd-poster.jpg" alt="Basement, hung to finished (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="drywall">
+        <div class="job-head"><span>Drywall Finishing · Omaha</span><h3>High-Rise, Floor by Floor</h3><p>Taping and finishing on a downtown high-rise, room after room and hallway after hallway.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/downtown-hallway-1.jpg" alt="Taped hallway with window at the end" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/downtown-room-1.jpg" alt="Angled ceiling and column, taped" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/downtown-room-2.jpg" alt="Room with city-view windows" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/downtown-hallway-3.jpg" alt="Long taped corridor" loading="lazy"></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="drywall">
+        <div class="job-head"><span>New Construction · Omaha metro</span><h3>Coffered Ceilings &amp; a Theater</h3><p>A new-build great room with coffered ceilings, plus a home theater, all finished smooth.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/new-construction-2.jpg" alt="Coffered ceiling great room, taped" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/job04-theater-1.jpg" alt="Home theater room, taped and finished" loading="lazy"></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="drywall">
+        <div class="job-head"><span>New Construction · Omaha metro</span><h3>New Build, Room by Room</h3><p>Bedroom by bedroom, seams taped and corners crisp, ready for paint.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/newbuild-1.jpg" alt="New build bedroom, drywall finished" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/newbuild-2.jpg" alt="Bedroom with window, drywall finished" loading="lazy"></div>
+        </div>
+      </article>
+      <article class="job-block" data-category="drywall">
+        <div class="job-head"><span>New Construction · Omaha metro</span><h3>Big Windows, Vaulted Ceilings</h3><p>Tall windows, a vaulted ceiling and a loft. Lots of angles, all finished clean.</p></div>
+        <div class="job-media">
+          <div class="job-tile"><img src="assets/photos/loft-1.jpg" alt="Tall black-framed windows in a vaulted room" loading="lazy"></div>
+          <div class="job-tile"><img src="assets/photos/loft-2.jpg" alt="Two-story wall with scaffold" loading="lazy"></div>
+          <div class="job-tile project-media" data-video="assets/video/vaulted-loft.mp4"><img src="assets/photos/vaulted-loft-poster.jpg" alt="Vaulted loft walk-through (video)" loading="lazy"><span class="ba-tag">Video</span></div>
+        </div>
       </article>
     </div>
   </div>
@@ -561,8 +576,8 @@ document.querySelectorAll('.gallery-filter').forEach(button=>{
     document.querySelectorAll('.gallery-filter').forEach(b=>b.classList.remove('active'));
     button.classList.add('active');
     const filter=button.dataset.filter;
-    document.querySelectorAll('.project-card').forEach(card=>{
-      card.hidden = filter !== 'all' && card.dataset.category !== filter;
+    document.querySelectorAll('.job-block').forEach(job=>{
+      job.hidden = filter !== 'all' && !job.dataset.category.split(' ').includes(filter);
     });
   });
 });
