@@ -10,6 +10,29 @@
     gtag('config', 'G-7DB3VY1MFB');
   </script>
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1151958710691620');
+    fbq('track', 'PageView');
+    // Count call/text taps as Contact
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+      if (link) fbq('track', 'Contact');
+    });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1151958710691620&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="How Patch & Paint Bros collects, uses, and protects information submitted through this website.">
@@ -77,7 +100,7 @@
   <div class="wrap">
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: October 7, 2026</p>
+    <p class="updated">Last updated: November 1, 2026</p>
 
     <p>Patch &amp; Paint Bros ("we," "us," "our") operates this website to show our drywall and painting work and let visitors request a free estimate. This page explains what information the site actually collects and what we do with it.</p>
 
@@ -101,13 +124,14 @@
     <p>Submitting the Free Estimate form sends your information directly through this website to <strong>Formspree</strong>, a third-party form-processing service, which delivers it to Patch &amp; Paint Bros by email. You stay on this website the whole time &mdash; nothing opens your own email app. Formspree processes and briefly retains submissions under its own privacy practices in order to deliver them to us; see <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree's privacy policy</a> for how they handle that.</p>
 
     <h2>Cookies</h2>
-    <p>This website uses <strong>Google Analytics</strong> (described below), which may set cookies to help distinguish visitors. Beyond that, the only outside resources this site loads are <strong>Google Fonts</strong> (to display the site's typefaces) and <strong>Formspree</strong> (to deliver estimate-form submissions, described above). Loading a font involves your browser making a request to Google's servers, which may see your IP address as part of that request &mdash; the same as loading any font from a website. We don't use Google Fonts for tracking, and no advertising or retargeting cookies are set by this site.</p>
+    <p>This website uses <strong>Google Analytics</strong> and the <strong>Meta Pixel</strong> (both described below), which may set cookies to help distinguish visitors. Beyond that, the only outside resources this site loads are <strong>Google Fonts</strong> (to display the site's typefaces) and <strong>Formspree</strong> (to deliver estimate-form submissions, described above). Loading a font involves your browser making a request to Google's servers, which may see your IP address as part of that request &mdash; the same as loading any font from a website. We don't use Google Fonts for tracking. The Meta Pixel is the only advertising tool on this site.</p>
 
     <h2>Analytics &amp; tracking</h2>
-    <p>This website uses <strong>Google Analytics</strong> to understand overall visit traffic &mdash; things like how many people visit, which pages they view, and roughly where visitors come from (for example, Instagram, TikTok, or a Google search). This is aggregate, visitor-pattern data, not anything used to identify you personally or to advertise to you elsewhere. We don't use Meta Pixel, TikTok Pixel, retargeting tools, or any other advertising tracking. You can learn more about how Google collects and processes this data at <a href="https://www.google.com/policies/privacy/partners/" target="_blank" rel="noopener">How Google uses information from sites that use our services</a>, and you can opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+    <p>This website uses <strong>Google Analytics</strong> to understand overall visit traffic &mdash; things like how many people visit, which pages they view, and roughly where visitors come from (for example, Instagram, TikTok, or a Google search). This is aggregate, visitor-pattern data, not anything used to identify you personally or to advertise to you elsewhere. You can learn more about how Google collects and processes this data at <a href="https://www.google.com/policies/privacy/partners/" target="_blank" rel="noopener">How Google uses information from sites that use our services</a>, and you can opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+    <p>This website also uses the <strong>Meta Pixel</strong>, a tool from Meta (the company behind Facebook and Instagram). It tells us when someone visits a page, taps to call or text us, or sends an estimate request, so we can see which of our Facebook and Instagram ads are working and show our ads to people who have visited this site. The Meta Pixel does not send Meta the details you type into our estimate form. Meta may connect this activity to your Facebook or Instagram account under its own privacy policy. You can control ads based on your activity in your <a href="https://www.facebook.com/adpreferences/ad_settings" target="_blank" rel="noopener">Facebook ad preferences</a>, and learn more in <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta's Privacy Policy</a>. We don't use a TikTok Pixel or any other advertising tracking.</p>
 
     <h2>Third parties</h2>
-    <p>We do not sell or rent your information. The outside services involved in this website are Google Analytics (described above), Google Fonts (described above, doesn't receive your form submissions), and Formspree, which processes your estimate-request submission solely so it can reach Patch &amp; Paint Bros.</p>
+    <p>We do not sell or rent your information. The outside services involved in this website are Google Analytics and the Meta Pixel (described above), Google Fonts (described above, doesn't receive your form submissions), and Formspree, which processes your estimate-request submission solely so it can reach Patch &amp; Paint Bros.</p>
 
     <h2>How long we keep it</h2>
     <p>Patch &amp; Paint Bros keeps submitted estimate requests for as long as needed for our own project and job records. Formspree also retains a copy of each submission in its dashboard under its own data-retention practices. You can ask us to delete any information you've sent us at any time.</p>
