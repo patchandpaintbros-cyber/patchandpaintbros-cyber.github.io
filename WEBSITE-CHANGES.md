@@ -211,3 +211,6 @@ privacy.html/terms.html in the zip were identical to the current ones.
 - Removed the empty beige bands around the Preparation/Details/Communication boxes (boxes now outlined, no filled background).
 - Footer: removed the duplicate Contact + Quick Links row; kept "Follow our work" (Instagram/TikTok/Facebook).
 - "See us in action" interior paint video: now the HD rebuild with the brick fireplace stretch cut (17.2–20.8s) and no ending card (full-house-paint-snap-hd.mp4). TikTok #09 got the same fireplace cut.
+
+## Update (11/1/26) — Hablamos español
+- Chris: the whole crew speaks Spanish. Hero note now "Serving the Omaha Metro · Hablamos español", new FAQ "Do you speak Spanish? / ¿Hablan español?", and schema knowsLanguage en/es. Google Business Profile also set to Spanish spoken + description line.
