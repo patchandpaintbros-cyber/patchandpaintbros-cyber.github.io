@@ -214,3 +214,8 @@ privacy.html/terms.html in the zip were identical to the current ones.
 
 ## Update (11/1/26) — Hablamos español
 - Chris: the whole crew speaks Spanish. Hero note now "Serving the Omaha Metro · Hablamos español", new FAQ "Do you speak Spanish? / ¿Hablan español?", and schema knowsLanguage en/es. Google Business Profile also set to Spanish spoken + description line.
+
+## Update (11/2/26) — Shorter, straight-to-the-point wording (Chris + Sylvia)
+- Chris + Sylvia loved the new short caption style ("straight to the point, not too wordy"), so the site copy was trimmed the same way: hero line, details section, before/after intro, project cards, services blurbs, 5-step process, video + photo intros, values, FAQ answers, estimate section, and gallery intro/bathroom/CTA.
+- About section ("Who we are") now uses the pinned TikTok "Get to know us" intro (posted 11/2), trimmed: heading "Get to know the Bros." + new paragraph + values Every Job Matters / Honest Communication / Dependable.
+- No service lists, photos, layout or contact info changed. Backups of the old pages in the 11/2 session scratchpad.
