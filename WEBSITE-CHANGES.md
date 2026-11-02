@@ -219,3 +219,11 @@ privacy.html/terms.html in the zip were identical to the current ones.
 - Chris + Sylvia loved the new short caption style ("straight to the point, not too wordy"), so the site copy was trimmed the same way: hero line, details section, before/after intro, project cards, services blurbs, 5-step process, video + photo intros, values, FAQ answers, estimate section, and gallery intro/bathroom/CTA.
 - About section ("Who we are") now uses the pinned TikTok "Get to know us" intro (posted 11/2), trimmed: heading "Get to know the Bros." + new paragraph + values Every Job Matters / Honest Communication / Dependable.
 - No service lists, photos, layout or contact info changed. Backups of the old pages in the 11/2 session scratchpad.
+
+## Update (11/2/26) — "Don't get sued" checklist pass (Yates TikTok, 20 points)
+- Ran Chris's 20-point website checklist (see memory: website-legal-checklist-yates). Already passing: privacy, terms (refund/cancellation = per written job agreement), cookies/tracking disclosed, form consent line, minimal required fields, real contact info, no unsupported claims (no insured/licensed), no fake reviews, own photos only, embeds disclosed, clear buttons, labeled form fields, skip link. No cookie popup (not required in US/Nebraska; Nebraska privacy law exempts small businesses).
+- Color contrast fixed on all 4 pages: gold text on white/cream is now darker gold (#7A5F2B for small labels, #8C7241 for the big italic headings). Gold on navy/dark sections unchanged. Gallery header "Free Estimate" button text now dark on gold. Footer copyright and estimate-band text slightly darker/brighter for readability. Every page tested: all text passes WCAG AA contrast.
+- Screen readers: the 3 homepage videos + both lightbox videos got descriptions; hidden Meta Pixel images got alt="".
+- Name: "Patch & Paint Bros" → "Patch and Paint Bros" everywhere (titles, schema, legal pages, form messages) to match Yelp/Google.
+- Moved <meta charset="utf-8"> to the very top of <head> on all pages (it was below the tracking scripts, which can garble symbols on some servers).
+- Backups of the old pages in the 11/2 session scratchpad (site-backup-1102).
