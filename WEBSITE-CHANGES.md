@@ -227,3 +227,6 @@ privacy.html/terms.html in the zip were identical to the current ones.
 - Name: "Patch & Paint Bros" → "Patch and Paint Bros" everywhere (titles, schema, legal pages, form messages) to match Yelp/Google.
 - Moved <meta charset="utf-8"> to the very top of <head> on all pages (it was below the tracking scripts, which can garble symbols on some servers).
 - Backups of the old pages in the 11/2 session scratchpad (site-backup-1102).
+
+## Update (11/2/26, later) — Tia Tita wording fix
+- Gallery: Tia Tita said "all in matching colors" but the photos show white and brown buildings. Now: "The house, the big garage and even the dog house, all painted fresh."
