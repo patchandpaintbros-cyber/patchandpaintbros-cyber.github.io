@@ -314,6 +314,22 @@ body{background:#fff;color:#17232d}
 .confidence h3{font-size:17px;color:var(--deep);margin:10px 0 10px;font-family:"Playfair Display","Playfair Fallback",Georgia,serif}
 .confidence p{font-size:13px;color:#5b6670;line-height:1.65;margin:0}
 @media(max-width:860px){.confidence{grid-template-columns:1fr}}
+.photo-quote{background:var(--deep);color:#fff;padding:80px 20px}
+.photo-quote .pq-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:50px;align-items:center}
+.photo-quote h2{font-family:"Playfair Display","Playfair Fallback",Georgia,serif;font-size:clamp(30px,4vw,44px);margin:10px 0 14px}
+.photo-quote h2 em{color:var(--gold-light)}
+.photo-quote .eyebrow{color:var(--gold-light)}
+.photo-quote p{color:#c9d1d6;line-height:1.7;font-size:14px}
+.pq-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ffffff22}
+.pq-steps>div{background:var(--deep);padding:26px 22px}
+.pq-steps span{font-family:"Playfair Display","Playfair Fallback",Georgia,serif;font-size:26px;color:var(--gold-light);font-weight:700}
+.pq-steps h3{font-size:15px;margin:8px 0 6px}
+.pq-steps p{font-size:13px;margin:0}
+.pq-small{font-size:12px!important;color:#9fabb2!important;margin-top:14px}
+.reviews-cta{background:var(--cream);padding:70px 20px;text-align:center}
+.reviews-cta h2{font-family:"Playfair Display","Playfair Fallback",Georgia,serif;font-size:clamp(28px,4vw,40px);color:var(--deep);margin:10px 0 12px}
+.reviews-cta p{color:#4f5b63;max-width:560px;margin:0 auto 22px;line-height:1.7;font-size:14px}
+@media(max-width:860px){.photo-quote .pq-inner{grid-template-columns:1fr}.pq-steps{grid-template-columns:1fr}}
 
 .faq{padding:85px 0;max-width:900px;margin:0 auto;padding-left:20px;padding-right:20px}
 .faq-grid{display:flex;flex-direction:column;gap:12px;margin-top:10px}
@@ -594,6 +610,24 @@ main .eyebrow,.eyebrow.gold,.compare-card figcaption span,.cards .num,.service-d
   <div><span>01</span><h3>Preparation Matters</h3><p>A great finish starts with good prep.</p></div>
   <div><span>02</span><h3>Details Matter</h3><p>Edges, seams and cleanup done right, not rushed.</p></div>
   <div><span>03</span><h3>Communication Matters</h3><p>We keep you posted from estimate to finish.</p></div>
+</section>
+<section class="photo-quote" id="photo-quote" aria-labelledby="pq-title">
+  <div class="pq-inner">
+    <div><p class="eyebrow gold">QUICK PRICE</p><h2 id="pq-title">Text us photos.<br><em>Get a price range.</em></h2>
+      <p>No form needed. Send a few pictures of the job and we'll text you back a rough price range.</p>
+      <a class="btn" href="sms:+14027399539">Text Photos to 402-739-9539</a>
+      <p class="pq-small">The range is a starting point. We confirm the final price after we see the job in person.</p></div>
+    <div class="pq-steps">
+      <div><span>01</span><h3>Snap 2–3 photos</h3><p>Wide shot plus a close-up of the problem area.</p></div>
+      <div><span>02</span><h3>Text them to us</h3><p>Add your city and what you want done.</p></div>
+      <div><span>03</span><h3>Get a range back</h3><p>Then we set up a free estimate if it works for you.</p></div>
+    </div>
+  </div>
+</section>
+<section class="reviews-cta" id="reviews" aria-labelledby="rv-title">
+  <p class="eyebrow gold">REVIEWS</p><h2 id="rv-title">Worked with us?</h2>
+  <p>Your review helps other homeowners find us. It takes about a minute.</p>
+  <a class="btn" href="https://g.page/r/CTiqOiOW5oEEECE/review" target="_blank" rel="noopener">Leave a Google Review</a>
 </section>
 <section class="faq">
 <div class="section-head"><div><p class="eyebrow gold">COMMON QUESTIONS</p><h2>Before we get<br><em>to work.</em></h2></div><p>Quick answers before we get started.</p></div>
