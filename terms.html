@@ -26,7 +26,7 @@
     // Count call/text taps as Contact
     document.addEventListener('click', function (e) {
       var link = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
-      if (link) fbq('track', 'Contact');
+      if (link) { fbq('track', 'Contact'); if (window.gtag) gtag('event', link.href.indexOf('sms:') === 0 ? 'text_tap' : 'call_tap'); }
     });
   </script>
   <noscript><img height="1" width="1" alt="" style="display:none"
@@ -37,7 +37,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Terms of use for the Patch and Paint Bros website.">
   <title>Terms of Use | Patch and Paint Bros</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://patchandpaintbros.com/terms.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style id="font-fallbacks">@font-face{font-family:"Playfair Fallback";src:local("Georgia");size-adjust:98.3%;ascent-override:110%;descent-override:25.5%;line-gap-override:0%}@font-face{font-family:"Montserrat Fallback";src:local("Arial");size-adjust:107.5%;ascent-override:90%;descent-override:23.3%;line-gap-override:0%}</style>

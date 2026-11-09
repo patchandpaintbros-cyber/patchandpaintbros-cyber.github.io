@@ -26,7 +26,7 @@
     // Count call/text taps as Contact
     document.addEventListener('click', function (e) {
       var link = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
-      if (link) fbq('track', 'Contact');
+      if (link) { fbq('track', 'Contact'); if (window.gtag) gtag('event', link.href.indexOf('sms:') === 0 ? 'text_tap' : 'call_tap'); }
     });
   </script>
   <noscript><img height="1" width="1" alt="" style="display:none"
@@ -37,12 +37,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Professional drywall finishing, drywall repair, texture work, and interior and exterior painting throughout Omaha, Bellevue, Papillion, and the surrounding metro. Free estimates.">
   <title>Patch and Paint Bros | Drywall Finishing & Painting | Omaha, NE</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://patchandpaintbros.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Patch and Paint Bros">
   <meta property="og:title" content="Patch and Paint Bros | Drywall Finishing & Painting | Omaha, NE">
   <meta property="og:description" content="Professional drywall finishing, drywall repair, texture work, and interior and exterior painting throughout Omaha, Bellevue, Papillion, and the surrounding metro. Free estimates.">
-  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:image" content="https://patchandpaintbros.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://patchandpaintbros.com/">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -404,14 +408,51 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </style>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"HomeAndConstructionBusiness",
-  "name":"Patch and Paint Bros",
-  "telephone":"+1-402-739-9539",
-  "knowsLanguage":["en","es"],
-  "email":"patchandpaintbros@gmail.com",
-  "areaServed":["Omaha, NE","Bellevue, NE","Papillion, NE","La Vista, NE","Gretna, NE","Elkhorn, NE"],
-  "description":"Drywall finishing, drywall repair, texture work, surface preparation, and interior and exterior painting in the Omaha metro."
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://patchandpaintbros.com/#business",
+  "name": "Patch and Paint Bros",
+  "url": "https://patchandpaintbros.com/",
+  "logo": "https://patchandpaintbros.com/assets/patch-paint-bros-header-logo.png",
+  "image": "https://patchandpaintbros.com/assets/og-image.jpg",
+  "telephone": "+1-402-739-9539",
+  "email": "patchandpaintbros@gmail.com",
+  "knowsLanguage": [
+    "en",
+    "es"
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Omaha, NE"
+    },
+    {
+      "@type": "City",
+      "name": "Bellevue, NE"
+    },
+    {
+      "@type": "City",
+      "name": "Papillion, NE"
+    },
+    {
+      "@type": "City",
+      "name": "La Vista, NE"
+    },
+    {
+      "@type": "City",
+      "name": "Gretna, NE"
+    },
+    {
+      "@type": "City",
+      "name": "Elkhorn, NE"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/patchandpaintbros",
+    "https://www.tiktok.com/@patchandpaintbros",
+    "https://www.facebook.com/profile.php?id=61595272553894"
+  ],
+  "description": "Drywall finishing, drywall repair, texture work, surface preparation, and interior and exterior painting in the Omaha metro."
 }
 </script>
 <style id="ppb-professional-upgrade">
@@ -512,8 +553,8 @@ main .eyebrow,.eyebrow.gold,.compare-card figcaption span,.cards .num,.service-d
 
 <section class="split proof">
   <div class="photo-frame proof-ba">
-    <div class="ba-half"><img loading="lazy" src="assets/photos/darkcab-before.jpg" alt="Before: white built-in cabinets"><span class="ba-tag">Before</span></div>
-    <div class="ba-half"><img loading="lazy" src="assets/photos/darkcab-after.jpg" alt="After: the same built-ins sprayed a deep dark finish"><span class="ba-tag">After</span></div>
+    <div class="ba-half"><img loading="lazy" src="assets/photos/darkcab-before-web.webp" alt="Before: white built-in cabinets"><span class="ba-tag">Before</span></div>
+    <div class="ba-half"><img loading="lazy" src="assets/photos/darkcab-after-web.webp" alt="After: the same built-ins sprayed a deep dark finish"><span class="ba-tag">After</span></div>
   </div>
   <div class="copy">
     <p class="eyebrow gold">WORKMANSHIP THAT SHOWS</p>
@@ -527,9 +568,9 @@ main .eyebrow,.eyebrow.gold,.compare-card figcaption span,.cards .num,.service-d
 <section class="compare" id="before-after"><div class="wrap">
   <div class="section-head"><div><p class="eyebrow gold">DRAG TO COMPARE</p><h2>Same room.<br><em>Our finish.</em></h2></div><p>Slide each photo to see the before and after. Same spot, same house in Omaha.</p></div>
   <div class="compare-grid">
-    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-dining-drywall-after.jpg" alt="After: dining room drywall finished smooth and paint-ready" loading="lazy"><img class="ba-before" src="assets/photos/ba-dining-drywall-before.jpg" alt="Before: dining room walls patched and stained, not yet finished" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>DRYWALL REPAIR</span><strong>Dining room</strong><p>Patched, stained walls taken to a smooth, paint-ready finish.</p></figcaption></figure>
-    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-stairs-paint-after.jpg" alt="After: staircase railing and spindles painted white" loading="lazy"><img class="ba-before" src="assets/photos/ba-stairs-paint-before.jpg" alt="Before: staircase with dark stained railing and spindles" loading="lazy"><span class="ba-lbl l">Before paint</span><span class="ba-lbl r">After paint</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>INTERIOR PAINTING</span><strong>Staircase</strong><p>Dark railing and spindles painted a crisp, clean white.</p></figcaption></figure>
-    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-bedroom-drywall-after.jpg" alt="After: bedroom walls finished smooth and paint-ready" loading="lazy"><img class="ba-before" src="assets/photos/ba-bedroom-drywall-before.jpg" alt="Before: bedroom walls patched and stained" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>DRYWALL REPAIR</span><strong>Bedroom</strong><p>Patched, stained walls finished smooth and ready for paint.</p></figcaption></figure>
+    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-dining-drywall-after-web.webp" alt="After: dining room drywall finished smooth and paint-ready" loading="lazy"><img class="ba-before" src="assets/photos/ba-dining-drywall-before-web.webp" alt="Before: dining room walls patched and stained, not yet finished" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>DRYWALL REPAIR</span><strong>Dining room</strong><p>Patched, stained walls taken to a smooth, paint-ready finish.</p></figcaption></figure>
+    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-stairs-paint-after-web.webp" alt="After: staircase railing and spindles painted white" loading="lazy"><img class="ba-before" src="assets/photos/ba-stairs-paint-before-web.webp" alt="Before: staircase with dark stained railing and spindles" loading="lazy"><span class="ba-lbl l">Before paint</span><span class="ba-lbl r">After paint</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>INTERIOR PAINTING</span><strong>Staircase</strong><p>Dark railing and spindles painted a crisp, clean white.</p></figcaption></figure>
+    <figure class="compare-card"><div class="ba-slider"><img src="assets/photos/ba-bedroom-drywall-after-web.webp" alt="After: bedroom walls finished smooth and paint-ready" loading="lazy"><img class="ba-before" src="assets/photos/ba-bedroom-drywall-before-web.webp" alt="Before: bedroom walls patched and stained" loading="lazy"><span class="ba-lbl l">Before</span><span class="ba-lbl r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"><span class="ba-line"></span><span class="ba-knob"><svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6V6zm7 0v12L21 12l-5.5-6z"/></svg></span></div><figcaption><span>DRYWALL REPAIR</span><strong>Bedroom</strong><p>Patched, stained walls finished smooth and ready for paint.</p></figcaption></figure>
   </div>
   <p class="compare-hint">Drag the handle left and right ↔</p>
 </div></section>
@@ -577,18 +618,18 @@ main .eyebrow,.eyebrow.gold,.compare-card figcaption span,.cards .num,.service-d
 <section class="gallery" id="gallery">
   <div class="section-head"><div><p class="eyebrow gold">REAL JOBS · REAL PHOTOS</p><h2>The proof is<br><em>on the walls.</em></h2></div><p>Real photos from our drywall and painting jobs around Omaha.</p></div>
   <div class="gallery-grid">
-    <figure data-video="assets/video/milton-working.mp4"><img src="assets/photos/milton-exterior-1.jpg" alt="Full exterior repaint, deep brown siding with white trim" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Full Exterior Repaint<br>Iowa</figcaption></figure>
+    <figure data-video="assets/video/milton-working.mp4"><img src="assets/photos/milton-exterior-1-web.webp" alt="Full exterior repaint, deep brown siding with white trim" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Full Exterior Repaint<br>Iowa</figcaption></figure>
     <figure data-video="assets/video/lawyer-ladies.mp4"><img src="assets/photos/lawyer-after-2.jpg" alt="Dark modern exterior repaint with deck pergola" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Modern Exterior Repaint<br>Omaha</figcaption></figure>
-    <figure data-video="assets/video/full-house-paint-working.mp4"><img src="assets/photos/full-house-kitchen-builtins.jpg" alt="Kitchen built-in cabinets and shelving sprayed white" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Cabinet &amp; Built-in Spraying<br>Omaha</figcaption></figure>
+    <figure data-video="assets/video/full-house-paint-working.mp4"><img src="assets/photos/full-house-kitchen-builtins-web.webp" alt="Kitchen built-in cabinets and shelving sprayed white" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Cabinet &amp; Built-in Spraying<br>Omaha</figcaption></figure>
     <figure data-video="assets/video/two-story-deck.mp4"><img src="assets/photos/twostory-1.jpg" alt="Two-story deck with stained posts and railings" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Two-Story Deck Staining<br>Omaha Metro</figcaption></figure>
-    <figure data-video="assets/video/tia-tita-main-house-hd.mp4"><img src="assets/photos/tia-tita-main-house.jpg" alt="Full exterior house repaint with dark garage doors, Bellevue" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Exterior Painting<br>Bellevue, NE</figcaption></figure>
-    <figure data-video="assets/video/dark-cabinets.mp4"><img src="assets/photos/darkcab-after.jpg" alt="Built-in cabinets sprayed a dark finish" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Built-In Cabinets<br>Omaha Metro</figcaption></figure>
-    <figure><img src="assets/photos/downtown-room-2.jpg" alt="Finished drywall room with floor-to-ceiling windows, downtown high-rise" loading="lazy"><figcaption>Drywall Finishing<br>Downtown Omaha</figcaption></figure>
-    <figure><img src="assets/photos/new-construction-2.jpg" alt="New construction great room, coffered ceiling, taped and finished" loading="lazy"><figcaption>New Construction Drywall<br>Omaha Metro</figcaption></figure>
-    <figure data-video="assets/video/red-deck.mp4"><img src="assets/photos/reddeck-2.jpg" alt="Red stained deck staircase" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Deck &amp; Stair Staining<br>Omaha Metro</figcaption></figure>
-    <figure data-video="assets/video/basement-drywall-hd.mp4"><img src="assets/photos/basement-finished-1.jpg" alt="Finished basement room, drywall taped, mudded and smooth" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Basement Drywall Finish<br>Omaha Metro</figcaption></figure>
-    <figure data-video="assets/video/tia-tita-garage-hd.mp4"><img src="assets/photos/tia-tita-garage-side.jpg" alt="Detached garage with new white siding and dark trim, Bellevue" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Garage Exterior Repaint<br>Bellevue, NE</figcaption></figure>
-    <figure data-video="assets/video/brown-deck.mp4"><img src="assets/photos/browndeck-1.jpg" alt="Brown stained backyard deck and railing" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Deck Staining<br>Omaha Metro</figcaption></figure>
+    <figure data-video="assets/video/tia-tita-main-house-hd.mp4"><img src="assets/photos/tia-tita-main-house-web.webp" alt="Full exterior house repaint with dark garage doors, Bellevue" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Exterior Painting<br>Bellevue, NE</figcaption></figure>
+    <figure data-video="assets/video/dark-cabinets.mp4"><img src="assets/photos/darkcab-after-web.webp" alt="Built-in cabinets sprayed a dark finish" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Built-In Cabinets<br>Omaha Metro</figcaption></figure>
+    <figure><img src="assets/photos/downtown-room-2-web.webp" alt="Finished drywall room with floor-to-ceiling windows, downtown high-rise" loading="lazy"><figcaption>Drywall Finishing<br>Downtown Omaha</figcaption></figure>
+    <figure><img src="assets/photos/new-construction-2-web.webp" alt="New construction great room, coffered ceiling, taped and finished" loading="lazy"><figcaption>New Construction Drywall<br>Omaha Metro</figcaption></figure>
+    <figure data-video="assets/video/red-deck.mp4"><img src="assets/photos/reddeck-2-web.webp" alt="Red stained deck staircase" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Deck &amp; Stair Staining<br>Omaha Metro</figcaption></figure>
+    <figure data-video="assets/video/basement-drywall-hd.mp4"><img src="assets/photos/basement-finished-1-web.webp" alt="Finished basement room, drywall taped, mudded and smooth" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Basement Drywall Finish<br>Omaha Metro</figcaption></figure>
+    <figure data-video="assets/video/tia-tita-garage-hd.mp4"><img src="assets/photos/tia-tita-garage-side-web.webp" alt="Detached garage with new white siding and dark trim, Bellevue" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Garage Exterior Repaint<br>Bellevue, NE</figcaption></figure>
+    <figure data-video="assets/video/brown-deck.mp4"><img src="assets/photos/browndeck-1-web.webp" alt="Brown stained backyard deck and railing" loading="lazy"><span class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><figcaption>Deck Staining<br>Omaha Metro</figcaption></figure>
   </div>
 </section>
 
@@ -629,7 +670,7 @@ main .eyebrow,.eyebrow.gold,.compare-card figcaption span,.cards .num,.service-d
   <p>Your review helps other homeowners find us. It takes about a minute.</p>
   <a class="btn" href="https://g.page/r/CTiqOiOW5oEEECE/review" target="_blank" rel="noopener">Leave a Google Review</a>
 </section>
-<section class="faq">
+<section class="faq" id="faq">
 <div class="section-head"><div><p class="eyebrow gold">COMMON QUESTIONS</p><h2>Before we get<br><em>to work.</em></h2></div><p>Quick answers before we get started.</p></div>
 <div class="faq-grid">
 <details><summary>Do you provide free estimates?</summary><p>Yes. Call, text or email us the details. Photos help.</p></details>
@@ -642,13 +683,13 @@ main .eyebrow,.eyebrow.gold,.compare-card figcaption span,.cards .num,.service-d
   <div><p class="eyebrow">FREE ESTIMATE</p><h2>Ready for a better<br><em>finished result?</em></h2><p>Text us a few photos or fill out the form, and we'll get you a free estimate.</p>
     <div class="contact-links"><a href="tel:+14027399539">Call · 402-739-9539</a><a href="sms:+14027399539">Text Us Photos</a><a href="mailto:patchandpaintbros@gmail.com">Email Photos</a></div>
   </div>
-  <form class="estimate-form" id="estimate-form" action="https://formspree.io/f/moejqzkp" method="POST"><input type="hidden" name="_subject" value="New Free Estimate Request - PPB Website"><div class="form-heading wide"><p class="eyebrow gold">READY TO START?</p><h3>How can we help?</h3><p>Select all that apply and tell us a little about your project.</p></div><label>First Name *<input name="first_name" autocomplete="given-name" required></label><label>Last Name<input name="last_name" autocomplete="family-name"></label><label>Phone *<input name="phone" type="tel" autocomplete="tel" required></label><label>Email<input name="email" type="email" autocomplete="email"></label><label>ZIP Code<input name="zip" inputmode="numeric" autocomplete="postal-code"></label><label>Preferred Contact<select name="contact"><option>Text</option><option>Phone Call</option><option>Email</option></select></label><fieldset class="service-selector wide"><legend>How can we help? Select all that apply</legend><label><input type="checkbox" name="services" value="Residential Drywall">Residential Drywall</label><label><input type="checkbox" name="services" value="Commercial Drywall">Commercial Drywall</label><label><input type="checkbox" name="services" value="Drywall Finishing">Drywall Finishing</label><label><input type="checkbox" name="services" value="Drywall Repair">Drywall Repair</label><label><input type="checkbox" name="services" value="Texture Matching">Texture Matching</label><label><input type="checkbox" name="services" value="Ceiling Repair">Ceiling Repair</label><label><input type="checkbox" name="services" value="Interior Painting">Interior Painting</label><label><input type="checkbox" name="services" value="Exterior Painting">Exterior Painting</label><label><input type="checkbox" name="services" value="Cabinet Painting">Cabinet Painting</label><label><input type="checkbox" name="services" value="Deck / Fence Staining">Deck / Fence Staining</label><label><input type="checkbox" name="services" value="Surface Preparation">Surface Preparation</label><label><input type="checkbox" name="services" value="Other">Other</label></fieldset><label class="wide">Tell us about your project *<textarea name="project" rows="5" required></textarea></label><p class="wide photo-note"><strong>Have photos?</strong> Text them to <a href="sms:+14027399539">402-739-9539</a>.</p><p class="wide form-consent">By submitting this form, you're asking Patch and Paint Bros for a free estimate. We'll use the details above only to respond to and manage your estimate request &mdash; see our <a href="privacy.html">Privacy Policy</a> for how your information is handled. We won't sign you up for marketing just for requesting an estimate.</p><button class="btn wide ppb-submit" type="submit">Request My Free Estimate →</button><p class="wide ppb-form-help">No obligation to hire. We’ll contact you about your project using the details you provide.</p></form>
+  <form class="estimate-form" id="estimate-form" action="https://formspree.io/f/moejqzkp" method="POST"><input type="hidden" name="_subject" value="New Free Estimate Request - PPB Website"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"><div class="form-heading wide"><p class="eyebrow gold">READY TO START?</p><h3>How can we help?</h3><p>Select all that apply and tell us a little about your project.</p></div><label>First Name *<input name="first_name" autocomplete="given-name" required></label><label>Last Name<input name="last_name" autocomplete="family-name"></label><label>Phone *<input name="phone" type="tel" autocomplete="tel" required></label><label>Email<input name="email" type="email" autocomplete="email"></label><label>ZIP Code<input name="zip" inputmode="numeric" autocomplete="postal-code"></label><label>Preferred Contact<select name="contact"><option>Text</option><option>Phone Call</option><option>Email</option></select></label><fieldset class="service-selector wide"><legend>How can we help? Select all that apply</legend><label><input type="checkbox" name="services" value="Residential Drywall">Residential Drywall</label><label><input type="checkbox" name="services" value="Commercial Drywall">Commercial Drywall</label><label><input type="checkbox" name="services" value="Drywall Finishing">Drywall Finishing</label><label><input type="checkbox" name="services" value="Drywall Repair">Drywall Repair</label><label><input type="checkbox" name="services" value="Texture Matching">Texture Matching</label><label><input type="checkbox" name="services" value="Ceiling Repair">Ceiling Repair</label><label><input type="checkbox" name="services" value="Interior Painting">Interior Painting</label><label><input type="checkbox" name="services" value="Exterior Painting">Exterior Painting</label><label><input type="checkbox" name="services" value="Cabinet Painting">Cabinet Painting</label><label><input type="checkbox" name="services" value="Deck / Fence Staining">Deck / Fence Staining</label><label><input type="checkbox" name="services" value="Surface Preparation">Surface Preparation</label><label><input type="checkbox" name="services" value="Other">Other</label></fieldset><label class="wide">Tell us about your project *<textarea name="project" rows="5" required></textarea></label><p class="wide photo-note"><strong>Have photos?</strong> Text them to <a href="sms:+14027399539">402-739-9539</a>.</p><p class="wide form-consent">By submitting this form, you're asking Patch and Paint Bros for a free estimate. We'll use the details above only to respond to and manage your estimate request &mdash; see our <a href="privacy.html">Privacy Policy</a> for how your information is handled. We won't sign you up for marketing just for requesting an estimate.</p><button class="btn wide ppb-submit" type="submit">Request My Free Estimate →</button><p class="wide ppb-form-help">No obligation to hire. We’ll contact you about your project using the details you provide.</p></form>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap"><div class="footer-grid-main">
-  <div class="footer-brand"><img class="footer-logo" loading="lazy" src="assets/patch-paint-bros-header-logo.webp" alt="Patch and Paint Bros"><p>Professional drywall finishing and interior & exterior painting serving the Omaha metro.</p></div>
+  <div class="footer-brand"><img class="footer-logo" loading="lazy" src="assets/patch-paint-bros-header-logo.webp" srcset="assets/patch-paint-bros-header-logo-320.webp 320w, assets/patch-paint-bros-header-logo.webp 578w" sizes="230px" alt="Patch and Paint Bros"><p>Professional drywall finishing and interior & exterior painting serving the Omaha metro.</p></div>
   <div><b>Services</b><a href="#services">Drywall Repair</a><a href="#services">Texture Matching</a><a href="#services">Interior Painting</a><a href="#services">Exterior Painting</a></div>
   <div><b>Company</b><a href="gallery.html">Gallery</a><a href="#about">About</a><a href="#areas">Service Areas</a><a href="#contact">Free Estimate</a></div>
   <div><b>Contact</b><a href="tel:+14027399539">402-739-9539</a><a href="mailto:patchandpaintbros@gmail.com">patchandpaintbros@gmail.com</a><span>Mon–Sat · 7am–6pm</span></div>
@@ -717,7 +758,7 @@ main .eyebrow,.eyebrow.gold,.compare-card figcaption span,.cards .num,.service-d
         });
 
         if (response.ok) {
-          if (window.fbq) fbq('track', 'Lead');
+          if (window.fbq) fbq('track', 'Lead'); if (window.gtag) gtag('event', 'generate_lead');
           form.reset();
           status.innerHTML = '<strong>Thank you! Your estimate request has been received.</strong><br>Patch and Paint Bros will review your project details and get back to you soon.';
           status.focus?.();
