@@ -777,6 +777,7 @@ main .eyebrow,.eyebrow.gold,.compare-card figcaption span,.cards .num,.service-d
           form.reset();
           status.innerHTML = '<strong>Thank you! Your estimate request has been received.</strong><br>Patch and Paint Bros will review your project details and get back to you soon.';
           status.focus?.();
+          setTimeout(function () { window.location.href = '/thanks.html'; }, 800);
         } else {
           const data = await response.json().catch(() => ({}));
           const message = data?.errors?.map(error => error.message).join(', ');
